@@ -1,3 +1,5 @@
+![Tiny Geth Mascot](./tinygeth.jpeg)
+
 # Tiny Geth
 
 Tiny Geth is Peter's personal, opinionated "fork" of go-ethereum. It's not a complete fork, rather combined bits and bobs from upstream with some local changes that were rejected upstream. I want to explore what Geth could be with hands untied, without having to care about breaking code for that one developer in Nebraska[¹](https://xkcd.com/2347/).
