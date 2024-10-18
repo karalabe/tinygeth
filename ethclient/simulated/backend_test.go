@@ -24,9 +24,9 @@ import (
 	"testing"
 	"time"
 
+	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/karalabe/tinygeth/accounts/abi/bind"
 	"github.com/karalabe/tinygeth/core/types"
 	"github.com/karalabe/tinygeth/params"
 )

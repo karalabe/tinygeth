@@ -25,8 +25,8 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/ethereum/go-ethereum/accounts/abi"
 	"github.com/ethereum/go-ethereum/common"
-	"github.com/karalabe/tinygeth/accounts/abi"
 	"github.com/karalabe/tinygeth/consensus"
 	"github.com/karalabe/tinygeth/core"
 	"github.com/karalabe/tinygeth/core/asm"
