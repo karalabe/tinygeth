@@ -26,8 +26,6 @@ import (
 	"time"
 
 	"github.com/dop251/goja"
-	"github.com/karalabe/tinygeth/accounts/scwallet"
-	"github.com/karalabe/tinygeth/accounts/usbwallet"
 	"github.com/karalabe/tinygeth/common/hexutil"
 	"github.com/karalabe/tinygeth/console/prompt"
 	"github.com/karalabe/tinygeth/internal/jsre"
@@ -96,99 +94,6 @@ func (b *bridge) NewAccount(call jsre.Call) (goja.Value, error) {
 		return nil, err
 	}
 	return ret, nil
-}
-
-// OpenWallet is a wrapper around personal.openWallet which can interpret and
-// react to certain error messages, such as the Trezor PIN matrix request.
-func (b *bridge) OpenWallet(call jsre.Call) (goja.Value, error) {
-	// Make sure we have a wallet specified to open
-	if call.Argument(0).ToObject(call.VM).ClassName() != "String" {
-		return nil, errors.New("first argument must be the wallet URL to open")
-	}
-	wallet := call.Argument(0)
-
-	var passwd goja.Value
-	if goja.IsUndefined(call.Argument(1)) || goja.IsNull(call.Argument(1)) {
-		passwd = call.VM.ToValue("")
-	} else {
-		passwd = call.Argument(1)
-	}
-	// Open the wallet and return if successful in itself
-	openWallet, callable := goja.AssertFunction(getJeth(call.VM).Get("openWallet"))
-	if !callable {
-		return nil, errors.New("jeth.openWallet is not callable")
-	}
-	val, err := openWallet(goja.Null(), wallet, passwd)
-	if err == nil {
-		return val, nil
-	}
-
-	// Wallet open failed, report error unless it's a PIN or PUK entry
-	switch {
-	case strings.HasSuffix(err.Error(), usbwallet.ErrTrezorPINNeeded.Error()):
-		val, err = b.readPinAndReopenWallet(call)
-		if err == nil {
-			return val, nil
-		}
-		val, err = b.readPassphraseAndReopenWallet(call)
-		if err != nil {
-			return nil, err
-		}
-
-	case strings.HasSuffix(err.Error(), scwallet.ErrPairingPasswordNeeded.Error()):
-		// PUK input requested, fetch from the user and call open again
-		input, err := b.prompter.PromptPassword("Please enter the pairing password: ")
-		if err != nil {
-			return nil, err
-		}
-		passwd = call.VM.ToValue(input)
-		if val, err = openWallet(goja.Null(), wallet, passwd); err != nil {
-			if !strings.HasSuffix(err.Error(), scwallet.ErrPINNeeded.Error()) {
-				return nil, err
-			}
-			// PIN input requested, fetch from the user and call open again
-			input, err := b.prompter.PromptPassword("Please enter current PIN: ")
-			if err != nil {
-				return nil, err
-			}
-			if val, err = openWallet(goja.Null(), wallet, call.VM.ToValue(input)); err != nil {
-				return nil, err
-			}
-		}
-
-	case strings.HasSuffix(err.Error(), scwallet.ErrPINUnblockNeeded.Error()):
-		// PIN unblock requested, fetch PUK and new PIN from the user
-		var pukpin string
-		input, err := b.prompter.PromptPassword("Please enter current PUK: ")
-		if err != nil {
-			return nil, err
-		}
-		pukpin = input
-		input, err = b.prompter.PromptPassword("Please enter new PIN: ")
-		if err != nil {
-			return nil, err
-		}
-		pukpin += input
-
-		if val, err = openWallet(goja.Null(), wallet, call.VM.ToValue(pukpin)); err != nil {
-			return nil, err
-		}
-
-	case strings.HasSuffix(err.Error(), scwallet.ErrPINNeeded.Error()):
-		// PIN input requested, fetch from the user and call open again
-		input, err := b.prompter.PromptPassword("Please enter current PIN: ")
-		if err != nil {
-			return nil, err
-		}
-		if val, err = openWallet(goja.Null(), wallet, call.VM.ToValue(input)); err != nil {
-			return nil, err
-		}
-
-	default:
-		// Unknown error occurred, drop to the user
-		return nil, err
-	}
-	return val, nil
 }
 
 func (b *bridge) readPassphraseAndReopenWallet(call jsre.Call) (goja.Value, error) {

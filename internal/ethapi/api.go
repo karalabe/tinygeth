@@ -32,7 +32,6 @@ import (
 	"github.com/holiman/uint256"
 	"github.com/karalabe/tinygeth/accounts"
 	"github.com/karalabe/tinygeth/accounts/keystore"
-	"github.com/karalabe/tinygeth/accounts/scwallet"
 	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/common/hexutil"
 	"github.com/karalabe/tinygeth/common/math"
@@ -50,7 +49,6 @@ import (
 	"github.com/karalabe/tinygeth/params"
 	"github.com/karalabe/tinygeth/rpc"
 	"github.com/karalabe/tinygeth/trie"
-	"github.com/tyler-smith/go-bip39"
 )
 
 // estimateGasErrorRatio is the amount of overestimation eth_estimateGas is
@@ -591,48 +589,6 @@ func (api *PersonalAccountAPI) EcRecover(ctx context.Context, data, sig hexutil.
 		return common.Address{}, err
 	}
 	return crypto.PubkeyToAddress(*rpk), nil
-}
-
-// InitializeWallet initializes a new wallet at the provided URL, by generating and returning a new private key.
-func (api *PersonalAccountAPI) InitializeWallet(ctx context.Context, url string) (string, error) {
-	wallet, err := api.am.Wallet(url)
-	if err != nil {
-		return "", err
-	}
-
-	entropy, err := bip39.NewEntropy(256)
-	if err != nil {
-		return "", err
-	}
-
-	mnemonic, err := bip39.NewMnemonic(entropy)
-	if err != nil {
-		return "", err
-	}
-
-	seed := bip39.NewSeed(mnemonic, "")
-
-	switch wallet := wallet.(type) {
-	case *scwallet.Wallet:
-		return mnemonic, wallet.Initialize(seed)
-	default:
-		return "", errors.New("specified wallet does not support initialization")
-	}
-}
-
-// Unpair deletes a pairing between wallet and geth.
-func (api *PersonalAccountAPI) Unpair(ctx context.Context, url string, pin string) error {
-	wallet, err := api.am.Wallet(url)
-	if err != nil {
-		return err
-	}
-
-	switch wallet := wallet.(type) {
-	case *scwallet.Wallet:
-		return wallet.Unpair([]byte(pin))
-	default:
-		return errors.New("specified wallet does not support pairing")
-	}
 }
 
 // BlockChainAPI provides an API to access Ethereum blockchain data.

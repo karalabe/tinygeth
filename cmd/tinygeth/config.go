@@ -29,8 +29,6 @@ import (
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/karalabe/tinygeth/accounts"
 	"github.com/karalabe/tinygeth/accounts/keystore"
-	"github.com/karalabe/tinygeth/accounts/scwallet"
-	"github.com/karalabe/tinygeth/accounts/usbwallet"
 	"github.com/karalabe/tinygeth/beacon/blsync"
 	"github.com/karalabe/tinygeth/cmd/utils"
 	"github.com/karalabe/tinygeth/common"
@@ -333,39 +331,6 @@ func setAccountManagerBackends(conf *node.Config, am *accounts.Manager, keydir s
 		scryptN = keystore.LightScryptN
 		scryptP = keystore.LightScryptP
 	}
-	// For now, we're using EITHER external signer OR local signers.
-	// If/when we implement some form of lockfile for USB and keystore wallets,
-	// we can have both, but it's very confusing for the user to see the same
-	// accounts in both externally and locally, plus very racey.
 	am.AddBackend(keystore.NewKeyStore(keydir, scryptN, scryptP))
-	if conf.USB {
-		// Start a USB hub for Ledger hardware wallets
-		if ledgerhub, err := usbwallet.NewLedgerHub(); err != nil {
-			log.Warn(fmt.Sprintf("Failed to start Ledger hub, disabling: %v", err))
-		} else {
-			am.AddBackend(ledgerhub)
-		}
-		// Start a USB hub for Trezor hardware wallets (HID version)
-		if trezorhub, err := usbwallet.NewTrezorHubWithHID(); err != nil {
-			log.Warn(fmt.Sprintf("Failed to start HID Trezor hub, disabling: %v", err))
-		} else {
-			am.AddBackend(trezorhub)
-		}
-		// Start a USB hub for Trezor hardware wallets (WebUSB version)
-		if trezorhub, err := usbwallet.NewTrezorHubWithWebUSB(); err != nil {
-			log.Warn(fmt.Sprintf("Failed to start WebUSB Trezor hub, disabling: %v", err))
-		} else {
-			am.AddBackend(trezorhub)
-		}
-	}
-	if len(conf.SmartCardDaemonPath) > 0 {
-		// Start a smart card hub
-		if schub, err := scwallet.NewHub(conf.SmartCardDaemonPath, scwallet.Scheme, keydir); err != nil {
-			log.Warn(fmt.Sprintf("Failed to start smart card hub, disabling: %v", err))
-		} else {
-			am.AddBackend(schub)
-		}
-	}
-
 	return nil
 }
