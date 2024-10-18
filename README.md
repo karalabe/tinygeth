@@ -12,6 +12,7 @@ Tiny Geth is Peter's personal, opinionated "fork" of go-ethereum. It's not a com
 These are the approximate changes compared upstream:
 
 - Remove all the go-ethereum repository meta files.
+- Remove all the go-ethereum utility commands.
 
 ## Commit history
 
