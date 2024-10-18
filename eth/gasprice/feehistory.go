@@ -26,11 +26,11 @@ import (
 	"slices"
 	"sync/atomic"
 
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/consensus/misc/eip1559"
 	"github.com/karalabe/tinygeth/consensus/misc/eip4844"
 	"github.com/karalabe/tinygeth/core/types"
-	"github.com/karalabe/tinygeth/log"
 	"github.com/karalabe/tinygeth/params"
 	"github.com/karalabe/tinygeth/rpc"
 )

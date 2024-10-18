@@ -29,6 +29,7 @@ import (
 	"sync"
 	"time"
 
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/holiman/billy"
 	"github.com/holiman/uint256"
@@ -41,7 +42,6 @@ import (
 	"github.com/karalabe/tinygeth/core/types"
 	"github.com/karalabe/tinygeth/crypto/kzg4844"
 	"github.com/karalabe/tinygeth/event"
-	"github.com/karalabe/tinygeth/log"
 	"github.com/karalabe/tinygeth/metrics"
 	"github.com/karalabe/tinygeth/params"
 )

@@ -19,10 +19,10 @@ package triedb
 import (
 	"errors"
 
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/core/rawdb"
 	"github.com/karalabe/tinygeth/ethdb"
-	"github.com/karalabe/tinygeth/log"
 	"github.com/karalabe/tinygeth/trie/trienode"
 	"github.com/karalabe/tinygeth/trie/triestate"
 	"github.com/karalabe/tinygeth/triedb/database"

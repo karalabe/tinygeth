@@ -33,13 +33,13 @@ import (
 	"sync"
 	"time"
 
+	"github.com/ethereum/go-ethereum/log"
 	pcsc "github.com/gballet/go-libpcsclite"
 	"github.com/karalabe/tinygeth"
 	"github.com/karalabe/tinygeth/accounts"
 	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/core/types"
 	"github.com/karalabe/tinygeth/crypto"
-	"github.com/karalabe/tinygeth/log"
 	"github.com/status-im/keycard-go/derivationpath"
 )
 

@@ -19,8 +19,8 @@ package core
 import (
 	"context"
 
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/karalabe/tinygeth/internal/ethapi"
-	"github.com/karalabe/tinygeth/log"
 	"github.com/karalabe/tinygeth/rpc"
 )
 

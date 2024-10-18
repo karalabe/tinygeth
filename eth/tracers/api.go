@@ -28,6 +28,7 @@ import (
 	"sync"
 	"time"
 
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/common/hexutil"
@@ -40,7 +41,6 @@ import (
 	"github.com/karalabe/tinygeth/eth/tracers/logger"
 	"github.com/karalabe/tinygeth/ethdb"
 	"github.com/karalabe/tinygeth/internal/ethapi"
-	"github.com/karalabe/tinygeth/log"
 	"github.com/karalabe/tinygeth/params"
 	"github.com/karalabe/tinygeth/rpc"
 )

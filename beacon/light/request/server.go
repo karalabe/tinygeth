@@ -21,8 +21,8 @@ import (
 	"sync"
 	"time"
 
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/karalabe/tinygeth/common/mclock"
-	"github.com/karalabe/tinygeth/log"
 )
 
 var (

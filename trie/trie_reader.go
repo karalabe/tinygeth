@@ -17,9 +17,9 @@
 package trie
 
 import (
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/core/types"
-	"github.com/karalabe/tinygeth/log"
 	"github.com/karalabe/tinygeth/triedb/database"
 )
 

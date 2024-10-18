@@ -25,10 +25,10 @@ import (
 	"strings"
 	"sync"
 
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/karalabe/tinygeth/common/hexutil"
 	"github.com/karalabe/tinygeth/console/prompt"
 	"github.com/karalabe/tinygeth/internal/ethapi"
-	"github.com/karalabe/tinygeth/log"
 )
 
 type CommandlineUI struct {

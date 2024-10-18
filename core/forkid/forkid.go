@@ -27,8 +27,8 @@ import (
 	"slices"
 	"strings"
 
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/karalabe/tinygeth/core/types"
-	"github.com/karalabe/tinygeth/log"
 	"github.com/karalabe/tinygeth/params"
 )
 

@@ -22,6 +22,7 @@ import (
 	"fmt"
 	"time"
 
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/core"
 	"github.com/karalabe/tinygeth/core/rawdb"
@@ -29,7 +30,6 @@ import (
 	"github.com/karalabe/tinygeth/core/types"
 	"github.com/karalabe/tinygeth/core/vm"
 	"github.com/karalabe/tinygeth/eth/tracers"
-	"github.com/karalabe/tinygeth/log"
 	"github.com/karalabe/tinygeth/trie"
 	"github.com/karalabe/tinygeth/triedb"
 )

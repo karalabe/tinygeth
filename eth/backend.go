@@ -24,6 +24,7 @@ import (
 	"runtime"
 	"sync"
 
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/karalabe/tinygeth/accounts"
 	"github.com/karalabe/tinygeth/common"
@@ -48,7 +49,6 @@ import (
 	"github.com/karalabe/tinygeth/event"
 	"github.com/karalabe/tinygeth/internal/ethapi"
 	"github.com/karalabe/tinygeth/internal/shutdowncheck"
-	"github.com/karalabe/tinygeth/log"
 	"github.com/karalabe/tinygeth/miner"
 	"github.com/karalabe/tinygeth/node"
 	"github.com/karalabe/tinygeth/p2p"

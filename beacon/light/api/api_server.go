@@ -19,11 +19,11 @@ package api
 import (
 	"reflect"
 
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/karalabe/tinygeth/beacon/light/request"
 	"github.com/karalabe/tinygeth/beacon/light/sync"
 	"github.com/karalabe/tinygeth/beacon/types"
 	"github.com/karalabe/tinygeth/common"
-	"github.com/karalabe/tinygeth/log"
 )
 
 // ApiServer is a wrapper around BeaconLightApi that implements request.requestServer.

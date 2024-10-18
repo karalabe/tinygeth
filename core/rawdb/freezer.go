@@ -25,9 +25,9 @@ import (
 	"sync"
 	"sync/atomic"
 
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/gofrs/flock"
 	"github.com/karalabe/tinygeth/ethdb"
-	"github.com/karalabe/tinygeth/log"
 	"github.com/karalabe/tinygeth/metrics"
 )
 

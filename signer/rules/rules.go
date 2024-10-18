@@ -24,9 +24,9 @@ import (
 	"strings"
 
 	"github.com/dop251/goja"
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/karalabe/tinygeth/internal/ethapi"
 	"github.com/karalabe/tinygeth/internal/jsre/deps"
-	"github.com/karalabe/tinygeth/log"
 	"github.com/karalabe/tinygeth/signer/core"
 	"github.com/karalabe/tinygeth/signer/storage"
 )

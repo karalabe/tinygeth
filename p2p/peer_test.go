@@ -28,7 +28,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/karalabe/tinygeth/log"
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/karalabe/tinygeth/p2p/enode"
 	"github.com/karalabe/tinygeth/p2p/enr"
 )

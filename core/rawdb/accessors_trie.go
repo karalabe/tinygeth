@@ -20,10 +20,10 @@ import (
 	"fmt"
 	"sync"
 
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/crypto"
 	"github.com/karalabe/tinygeth/ethdb"
-	"github.com/karalabe/tinygeth/log"
 )
 
 // HashScheme is the legacy hash-based state scheme with which trie nodes are

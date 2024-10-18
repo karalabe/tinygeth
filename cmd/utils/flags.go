@@ -35,6 +35,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/ethereum/go-ethereum/log"
 	pcsclite "github.com/gballet/go-libpcsclite"
 	"github.com/karalabe/tinygeth/accounts"
 	"github.com/karalabe/tinygeth/accounts/keystore"
@@ -61,7 +62,6 @@ import (
 	"github.com/karalabe/tinygeth/graphql"
 	"github.com/karalabe/tinygeth/internal/ethapi"
 	"github.com/karalabe/tinygeth/internal/flags"
-	"github.com/karalabe/tinygeth/log"
 	"github.com/karalabe/tinygeth/metrics"
 	"github.com/karalabe/tinygeth/metrics/exp"
 	"github.com/karalabe/tinygeth/metrics/influxdb"

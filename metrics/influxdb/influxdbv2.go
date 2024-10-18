@@ -4,9 +4,9 @@ import (
 	"context"
 	"time"
 
+	"github.com/ethereum/go-ethereum/log"
 	influxdb2 "github.com/influxdata/influxdb-client-go/v2"
 	"github.com/influxdata/influxdb-client-go/v2/api"
-	"github.com/karalabe/tinygeth/log"
 	"github.com/karalabe/tinygeth/metrics"
 )
 

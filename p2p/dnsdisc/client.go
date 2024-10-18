@@ -27,10 +27,10 @@ import (
 	"sync"
 	"time"
 
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/karalabe/tinygeth/common/lru"
 	"github.com/karalabe/tinygeth/common/mclock"
 	"github.com/karalabe/tinygeth/crypto"
-	"github.com/karalabe/tinygeth/log"
 	"github.com/karalabe/tinygeth/p2p/enode"
 	"github.com/karalabe/tinygeth/p2p/enr"
 	"golang.org/x/sync/singleflight"

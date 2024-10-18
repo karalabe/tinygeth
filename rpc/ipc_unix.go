@@ -27,7 +27,7 @@ import (
 	"path/filepath"
 	"syscall"
 
-	"github.com/karalabe/tinygeth/log"
+	"github.com/ethereum/go-ethereum/log"
 )
 
 const (

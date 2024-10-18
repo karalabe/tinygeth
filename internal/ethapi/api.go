@@ -27,6 +27,7 @@ import (
 	"time"
 
 	"github.com/davecgh/go-spew/spew"
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/holiman/uint256"
 	"github.com/karalabe/tinygeth/accounts"
@@ -45,7 +46,6 @@ import (
 	"github.com/karalabe/tinygeth/crypto"
 	"github.com/karalabe/tinygeth/eth/gasestimator"
 	"github.com/karalabe/tinygeth/eth/tracers/logger"
-	"github.com/karalabe/tinygeth/log"
 	"github.com/karalabe/tinygeth/p2p"
 	"github.com/karalabe/tinygeth/params"
 	"github.com/karalabe/tinygeth/rpc"

@@ -20,7 +20,7 @@ import (
 	"net"
 	"strings"
 
-	"github.com/karalabe/tinygeth/log"
+	"github.com/ethereum/go-ethereum/log"
 )
 
 // StartIPCEndpoint starts an IPC endpoint.

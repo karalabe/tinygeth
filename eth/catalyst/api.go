@@ -24,6 +24,7 @@ import (
 	"sync"
 	"time"
 
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/karalabe/tinygeth/beacon/engine"
 	"github.com/karalabe/tinygeth/common"
@@ -35,7 +36,6 @@ import (
 	"github.com/karalabe/tinygeth/eth"
 	"github.com/karalabe/tinygeth/eth/downloader"
 	"github.com/karalabe/tinygeth/internal/version"
-	"github.com/karalabe/tinygeth/log"
 	"github.com/karalabe/tinygeth/miner"
 	"github.com/karalabe/tinygeth/node"
 	"github.com/karalabe/tinygeth/params"

@@ -21,10 +21,10 @@ import (
 	"errors"
 	"os"
 
+	"github.com/ethereum/go-ethereum/log"
 	bloomfilter "github.com/holiman/bloomfilter/v2"
 	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/core/rawdb"
-	"github.com/karalabe/tinygeth/log"
 )
 
 // stateBloomHash is used to convert a trie hash or contract code hash into a 64 bit mini hash.

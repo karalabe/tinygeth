@@ -23,6 +23,7 @@ import (
 	"sync"
 	"time"
 
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/karalabe/tinygeth/beacon/params"
 	"github.com/karalabe/tinygeth/beacon/types"
 	"github.com/karalabe/tinygeth/common"
@@ -30,7 +31,6 @@ import (
 	"github.com/karalabe/tinygeth/common/mclock"
 	"github.com/karalabe/tinygeth/core/rawdb"
 	"github.com/karalabe/tinygeth/ethdb"
-	"github.com/karalabe/tinygeth/log"
 )
 
 var (

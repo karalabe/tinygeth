@@ -25,12 +25,12 @@ import (
 	"testing"
 	"time"
 
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/core/rawdb"
 	"github.com/karalabe/tinygeth/core/types"
 	"github.com/karalabe/tinygeth/eth/protocols/eth"
 	"github.com/karalabe/tinygeth/ethdb"
-	"github.com/karalabe/tinygeth/log"
 )
 
 // hookedBackfiller is a tester backfiller with all interface methods mocked and

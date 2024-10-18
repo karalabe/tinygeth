@@ -19,11 +19,11 @@ package blobpool
 import (
 	"errors"
 
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/holiman/billy"
 	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/core/types"
-	"github.com/karalabe/tinygeth/log"
 )
 
 // limboBlob is a wrapper around an opaque blobset that also contains the tx hash

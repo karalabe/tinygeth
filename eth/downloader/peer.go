@@ -25,10 +25,10 @@ import (
 	"sync"
 	"time"
 
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/eth/protocols/eth"
 	"github.com/karalabe/tinygeth/event"
-	"github.com/karalabe/tinygeth/log"
 	"github.com/karalabe/tinygeth/p2p/msgrate"
 )
 

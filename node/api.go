@@ -21,10 +21,10 @@ import (
 	"fmt"
 	"strings"
 
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/karalabe/tinygeth/common/hexutil"
 	"github.com/karalabe/tinygeth/crypto"
 	"github.com/karalabe/tinygeth/internal/debug"
-	"github.com/karalabe/tinygeth/log"
 	"github.com/karalabe/tinygeth/p2p"
 	"github.com/karalabe/tinygeth/p2p/discover"
 	"github.com/karalabe/tinygeth/p2p/enode"

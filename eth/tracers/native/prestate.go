@@ -22,6 +22,7 @@ import (
 	"math/big"
 	"sync/atomic"
 
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/common/hexutil"
 	"github.com/karalabe/tinygeth/core/tracing"
@@ -30,7 +31,6 @@ import (
 	"github.com/karalabe/tinygeth/crypto"
 	"github.com/karalabe/tinygeth/eth/tracers"
 	"github.com/karalabe/tinygeth/eth/tracers/internal"
-	"github.com/karalabe/tinygeth/log"
 	"github.com/karalabe/tinygeth/params"
 )
 

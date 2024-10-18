@@ -21,11 +21,11 @@ import (
 	"fmt"
 	"time"
 
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/common/hexutil"
 	"github.com/karalabe/tinygeth/core/types"
-	"github.com/karalabe/tinygeth/log"
 	"github.com/karalabe/tinygeth/trie"
 )
 

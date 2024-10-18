@@ -25,12 +25,12 @@ import (
 	"strings"
 	"time"
 
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/ethdb"
 	"github.com/karalabe/tinygeth/ethdb/leveldb"
 	"github.com/karalabe/tinygeth/ethdb/memorydb"
 	"github.com/karalabe/tinygeth/ethdb/pebble"
-	"github.com/karalabe/tinygeth/log"
 	"github.com/olekukonko/tablewriter"
 )
 

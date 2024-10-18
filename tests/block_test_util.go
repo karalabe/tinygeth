@@ -26,6 +26,7 @@ import (
 	"os"
 	"reflect"
 
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/common/hexutil"
@@ -38,7 +39,6 @@ import (
 	"github.com/karalabe/tinygeth/core/tracing"
 	"github.com/karalabe/tinygeth/core/types"
 	"github.com/karalabe/tinygeth/core/vm"
-	"github.com/karalabe/tinygeth/log"
 	"github.com/karalabe/tinygeth/params"
 	"github.com/karalabe/tinygeth/triedb"
 	"github.com/karalabe/tinygeth/triedb/hashdb"

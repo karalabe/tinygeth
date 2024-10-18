@@ -24,6 +24,7 @@ import (
 	"sync/atomic"
 	"time"
 
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/core"
 	"github.com/karalabe/tinygeth/core/forkid"
@@ -37,7 +38,6 @@ import (
 	"github.com/karalabe/tinygeth/eth/protocols/snap"
 	"github.com/karalabe/tinygeth/ethdb"
 	"github.com/karalabe/tinygeth/event"
-	"github.com/karalabe/tinygeth/log"
 	"github.com/karalabe/tinygeth/metrics"
 	"github.com/karalabe/tinygeth/p2p"
 	"github.com/karalabe/tinygeth/p2p/enode"

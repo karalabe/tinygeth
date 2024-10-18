@@ -19,12 +19,12 @@ package vm
 import (
 	"fmt"
 
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/holiman/uint256"
 	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/common/math"
 	"github.com/karalabe/tinygeth/core/tracing"
 	"github.com/karalabe/tinygeth/crypto"
-	"github.com/karalabe/tinygeth/log"
 )
 
 // Config are the configuration options for the Interpreter

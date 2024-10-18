@@ -20,8 +20,8 @@ import (
 	"fmt"
 	"sync"
 
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/karalabe/tinygeth/common"
-	"github.com/karalabe/tinygeth/log"
 	"github.com/karalabe/tinygeth/trie/trienode"
 	"github.com/karalabe/tinygeth/trie/triestate"
 )

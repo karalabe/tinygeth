@@ -23,6 +23,7 @@ import (
 	"math/big"
 	"path/filepath"
 
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/common/hexutil"
 	"github.com/karalabe/tinygeth/consensus/misc/eip4844"
@@ -30,7 +31,6 @@ import (
 	"github.com/karalabe/tinygeth/core/types"
 	"github.com/karalabe/tinygeth/core/vm"
 	"github.com/karalabe/tinygeth/eth/tracers"
-	"github.com/karalabe/tinygeth/log"
 	"gopkg.in/natefinch/lumberjack.v2"
 )
 

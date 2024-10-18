@@ -26,6 +26,7 @@ import (
 	"os"
 	"reflect"
 
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/karalabe/tinygeth/accounts"
 	"github.com/karalabe/tinygeth/accounts/keystore"
 	"github.com/karalabe/tinygeth/accounts/scwallet"
@@ -34,7 +35,6 @@ import (
 	"github.com/karalabe/tinygeth/common/hexutil"
 	"github.com/karalabe/tinygeth/common/math"
 	"github.com/karalabe/tinygeth/internal/ethapi"
-	"github.com/karalabe/tinygeth/log"
 	"github.com/karalabe/tinygeth/rpc"
 	"github.com/karalabe/tinygeth/signer/core/apitypes"
 	"github.com/karalabe/tinygeth/signer/storage"

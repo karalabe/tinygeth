@@ -22,10 +22,10 @@ import (
 	"log/slog"
 	"os"
 
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/common/hexutil"
 	"github.com/karalabe/tinygeth/internal/ethapi"
-	"github.com/karalabe/tinygeth/log"
 	"github.com/karalabe/tinygeth/signer/core/apitypes"
 )
 

@@ -21,8 +21,8 @@ import (
 	"sync"
 	"time"
 
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/karalabe/tinygeth/beacon/types"
-	"github.com/karalabe/tinygeth/log"
 )
 
 // HeadTracker keeps track of the latest validated head and the "prefetch" head

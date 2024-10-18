@@ -29,6 +29,7 @@ import (
 	"strings"
 	"sync"
 
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/gofrs/flock"
 	"github.com/karalabe/tinygeth/accounts"
 	"github.com/karalabe/tinygeth/common"
@@ -37,7 +38,6 @@ import (
 	"github.com/karalabe/tinygeth/ethdb"
 	"github.com/karalabe/tinygeth/ethdb/memorydb"
 	"github.com/karalabe/tinygeth/event"
-	"github.com/karalabe/tinygeth/log"
 	"github.com/karalabe/tinygeth/p2p"
 	"github.com/karalabe/tinygeth/rpc"
 )

@@ -24,12 +24,12 @@ import (
 	"sort"
 	"time"
 
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/core/rawdb"
 	"github.com/karalabe/tinygeth/core/types"
 	"github.com/karalabe/tinygeth/eth/protocols/eth"
 	"github.com/karalabe/tinygeth/ethdb"
-	"github.com/karalabe/tinygeth/log"
 )
 
 // scratchHeaders is the number of headers to store in a scratch space to allow

@@ -23,8 +23,8 @@ import (
 	"sort"
 	"strings"
 
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/karalabe/tinygeth/internal/version"
-	"github.com/karalabe/tinygeth/log"
 	"github.com/karalabe/tinygeth/params"
 	"github.com/mattn/go-isatty"
 	"github.com/urfave/cli/v2"

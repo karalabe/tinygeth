@@ -21,7 +21,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/karalabe/tinygeth/log"
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/karalabe/tinygeth/rpc"
 )
 

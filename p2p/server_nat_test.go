@@ -23,9 +23,9 @@ import (
 	"testing"
 	"time"
 
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/karalabe/tinygeth/common/mclock"
 	"github.com/karalabe/tinygeth/internal/testlog"
-	"github.com/karalabe/tinygeth/log"
 )
 
 func TestServerPortMapping(t *testing.T) {

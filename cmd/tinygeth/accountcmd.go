@@ -20,11 +20,11 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/karalabe/tinygeth/accounts"
 	"github.com/karalabe/tinygeth/accounts/keystore"
 	"github.com/karalabe/tinygeth/cmd/utils"
 	"github.com/karalabe/tinygeth/crypto"
-	"github.com/karalabe/tinygeth/log"
 	"github.com/urfave/cli/v2"
 )
 

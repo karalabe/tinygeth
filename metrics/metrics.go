@@ -14,7 +14,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/karalabe/tinygeth/log"
+	"github.com/ethereum/go-ethereum/log"
 )
 
 // Enabled is checked by the constructor functions for all of the

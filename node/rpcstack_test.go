@@ -28,10 +28,10 @@ import (
 	"testing"
 	"time"
 
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/golang-jwt/jwt/v4"
 	"github.com/gorilla/websocket"
 	"github.com/karalabe/tinygeth/internal/testlog"
-	"github.com/karalabe/tinygeth/log"
 	"github.com/karalabe/tinygeth/rpc"
 	"github.com/stretchr/testify/assert"
 )

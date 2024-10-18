@@ -24,7 +24,7 @@ import (
 	"io"
 	"os"
 
-	"github.com/karalabe/tinygeth/log"
+	"github.com/ethereum/go-ethereum/log"
 )
 
 type storedCredential struct {

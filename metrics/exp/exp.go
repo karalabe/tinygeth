@@ -8,7 +8,7 @@ import (
 	"net/http"
 	"sync"
 
-	"github.com/karalabe/tinygeth/log"
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/karalabe/tinygeth/metrics"
 	"github.com/karalabe/tinygeth/metrics/prometheus"
 )

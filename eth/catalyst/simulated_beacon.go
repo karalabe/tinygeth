@@ -25,6 +25,7 @@ import (
 	"sync"
 	"time"
 
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/karalabe/tinygeth/beacon/engine"
 	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/core/txpool"
@@ -32,7 +33,6 @@ import (
 	"github.com/karalabe/tinygeth/crypto/kzg4844"
 	"github.com/karalabe/tinygeth/eth"
 	"github.com/karalabe/tinygeth/event"
-	"github.com/karalabe/tinygeth/log"
 	"github.com/karalabe/tinygeth/node"
 	"github.com/karalabe/tinygeth/params"
 	"github.com/karalabe/tinygeth/rpc"

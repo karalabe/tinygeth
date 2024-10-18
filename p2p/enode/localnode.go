@@ -26,7 +26,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/karalabe/tinygeth/log"
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/karalabe/tinygeth/p2p/enr"
 	"github.com/karalabe/tinygeth/p2p/netutil"
 )

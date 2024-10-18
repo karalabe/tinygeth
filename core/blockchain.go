@@ -29,6 +29,7 @@ import (
 	"sync/atomic"
 	"time"
 
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/common/lru"
@@ -47,7 +48,6 @@ import (
 	"github.com/karalabe/tinygeth/event"
 	"github.com/karalabe/tinygeth/internal/syncx"
 	"github.com/karalabe/tinygeth/internal/version"
-	"github.com/karalabe/tinygeth/log"
 	"github.com/karalabe/tinygeth/metrics"
 	"github.com/karalabe/tinygeth/params"
 	"github.com/karalabe/tinygeth/triedb"

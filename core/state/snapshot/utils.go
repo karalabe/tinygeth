@@ -21,11 +21,11 @@ import (
 	"fmt"
 	"time"
 
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/core/rawdb"
 	"github.com/karalabe/tinygeth/core/types"
 	"github.com/karalabe/tinygeth/ethdb"
-	"github.com/karalabe/tinygeth/log"
 )
 
 // CheckDanglingStorage iterates the snap storage data, and verifies that all

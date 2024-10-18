@@ -17,6 +17,7 @@
 package core
 
 import (
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/common/lru"
 	"github.com/karalabe/tinygeth/consensus/beacon"
@@ -25,7 +26,6 @@ import (
 	"github.com/karalabe/tinygeth/core/stateless"
 	"github.com/karalabe/tinygeth/core/types"
 	"github.com/karalabe/tinygeth/core/vm"
-	"github.com/karalabe/tinygeth/log"
 	"github.com/karalabe/tinygeth/params"
 	"github.com/karalabe/tinygeth/trie"
 	"github.com/karalabe/tinygeth/triedb"

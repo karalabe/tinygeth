@@ -21,11 +21,11 @@ import (
 	"fmt"
 	"sync"
 
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/common/math"
 	"github.com/karalabe/tinygeth/ethdb"
-	"github.com/karalabe/tinygeth/log"
 )
 
 // memoryTable is used to store a list of sequential items in memory.

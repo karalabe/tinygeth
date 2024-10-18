@@ -19,10 +19,10 @@ package core
 import (
 	"time"
 
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/common/mclock"
 	"github.com/karalabe/tinygeth/core/types"
-	"github.com/karalabe/tinygeth/log"
 )
 
 // insertStats tracks and reports on block insertion.

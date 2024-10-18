@@ -17,7 +17,7 @@
 package blobpool
 
 import (
-	"github.com/karalabe/tinygeth/log"
+	"github.com/ethereum/go-ethereum/log"
 )
 
 // Config are the configuration parameters of the blob transaction pool.

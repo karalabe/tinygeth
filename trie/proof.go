@@ -21,9 +21,9 @@ import (
 	"errors"
 	"fmt"
 
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/ethdb"
-	"github.com/karalabe/tinygeth/log"
 )
 
 // Prove constructs a merkle proof for key. The result contains all encoded nodes

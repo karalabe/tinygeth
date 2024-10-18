@@ -28,7 +28,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/karalabe/tinygeth/log"
+	"github.com/ethereum/go-ethereum/log"
 )
 
 // handler handles JSON-RPC messages. There is one handler per connection. Note that

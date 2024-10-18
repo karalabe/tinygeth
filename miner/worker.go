@@ -23,6 +23,7 @@ import (
 	"sync/atomic"
 	"time"
 
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/holiman/uint256"
 	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/consensus/misc/eip1559"
@@ -33,7 +34,6 @@ import (
 	"github.com/karalabe/tinygeth/core/txpool"
 	"github.com/karalabe/tinygeth/core/types"
 	"github.com/karalabe/tinygeth/core/vm"
-	"github.com/karalabe/tinygeth/log"
 	"github.com/karalabe/tinygeth/params"
 )
 

@@ -22,10 +22,10 @@ import (
 	"io/fs"
 	"os"
 
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/core/types"
-	"github.com/karalabe/tinygeth/log"
 )
 
 // errNoActiveJournal is returned if a transaction is attempted to be inserted

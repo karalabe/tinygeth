@@ -28,6 +28,7 @@ import (
 	"testing"
 	"time"
 
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/holiman/uint256"
 	"github.com/karalabe/tinygeth/common"
@@ -36,7 +37,6 @@ import (
 	"github.com/karalabe/tinygeth/crypto"
 	"github.com/karalabe/tinygeth/ethdb"
 	"github.com/karalabe/tinygeth/internal/testrand"
-	"github.com/karalabe/tinygeth/log"
 	"github.com/karalabe/tinygeth/trie"
 	"github.com/karalabe/tinygeth/trie/trienode"
 	"github.com/karalabe/tinygeth/triedb"

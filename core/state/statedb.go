@@ -27,6 +27,7 @@ import (
 	"sync/atomic"
 	"time"
 
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/holiman/uint256"
 	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/core/rawdb"
@@ -35,7 +36,6 @@ import (
 	"github.com/karalabe/tinygeth/core/tracing"
 	"github.com/karalabe/tinygeth/core/types"
 	"github.com/karalabe/tinygeth/crypto"
-	"github.com/karalabe/tinygeth/log"
 	"github.com/karalabe/tinygeth/params"
 	"github.com/karalabe/tinygeth/trie"
 	"github.com/karalabe/tinygeth/trie/trienode"

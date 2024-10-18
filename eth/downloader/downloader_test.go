@@ -24,6 +24,7 @@ import (
 	"testing"
 	"time"
 
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/karalabe/tinygeth"
 	"github.com/karalabe/tinygeth/common"
@@ -35,7 +36,6 @@ import (
 	"github.com/karalabe/tinygeth/eth/protocols/eth"
 	"github.com/karalabe/tinygeth/eth/protocols/snap"
 	"github.com/karalabe/tinygeth/event"
-	"github.com/karalabe/tinygeth/log"
 	"github.com/karalabe/tinygeth/params"
 	"github.com/karalabe/tinygeth/trie"
 )

@@ -19,12 +19,12 @@ package sync
 import (
 	"sort"
 
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/karalabe/tinygeth/beacon/light"
 	"github.com/karalabe/tinygeth/beacon/light/request"
 	"github.com/karalabe/tinygeth/beacon/params"
 	"github.com/karalabe/tinygeth/beacon/types"
 	"github.com/karalabe/tinygeth/common"
-	"github.com/karalabe/tinygeth/log"
 )
 
 const maxUpdateRequest = 8 // maximum number of updates requested in a single request

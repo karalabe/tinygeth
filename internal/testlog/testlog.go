@@ -25,7 +25,7 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/karalabe/tinygeth/log"
+	"github.com/ethereum/go-ethereum/log"
 )
 
 const (

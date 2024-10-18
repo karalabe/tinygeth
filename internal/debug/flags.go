@@ -27,8 +27,8 @@ import (
 	"path/filepath"
 	"runtime"
 
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/karalabe/tinygeth/internal/flags"
-	"github.com/karalabe/tinygeth/log"
 	"github.com/karalabe/tinygeth/metrics"
 	"github.com/karalabe/tinygeth/metrics/exp"
 	"github.com/mattn/go-colorable"

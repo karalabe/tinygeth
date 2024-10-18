@@ -25,7 +25,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/karalabe/tinygeth/log"
+	"github.com/ethereum/go-ethereum/log"
 )
 
 // measurementImpact is the impact a single measurement has on a peer's final

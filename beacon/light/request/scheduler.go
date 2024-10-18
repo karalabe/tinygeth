@@ -19,7 +19,7 @@ package request
 import (
 	"sync"
 
-	"github.com/karalabe/tinygeth/log"
+	"github.com/ethereum/go-ethereum/log"
 )
 
 // Module represents a mechanism which is typically responsible for downloading

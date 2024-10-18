@@ -17,6 +17,7 @@
 package blsync
 
 import (
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/karalabe/tinygeth/beacon/light/request"
 	"github.com/karalabe/tinygeth/beacon/light/sync"
 	"github.com/karalabe/tinygeth/beacon/params"
@@ -24,7 +25,6 @@ import (
 	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/common/lru"
 	"github.com/karalabe/tinygeth/event"
-	"github.com/karalabe/tinygeth/log"
 )
 
 // beaconBlockSync implements request.Module; it fetches the beacon blocks belonging
