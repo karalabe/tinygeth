@@ -7,6 +7,12 @@ Tiny Geth is Peter's personal, opinionated "fork" of go-ethereum. It's not a com
 - ***This is a personal project. I take no responsibility for anyone using it and incurring arbitrary losses.***
 - ***Unless promised personally, there is no API guarantee anywhere in this project, not even on the RPCs.***
 
+## Changelog
+
+These are the approximate changes compared upstream:
+
+- Remove all the go-ethereum repository meta files.
+
 ## Commit history
 
 Tracking authorship information through git commits from upstream is not possible due to the different code and dependency structure and changes to fundamental types. I'll try to explicitly highlight commits that are merging upstream code downstream into this repo to try and explicitly highlight its origins.
