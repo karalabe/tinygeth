@@ -21,7 +21,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/karalabe/tinygeth/p2p"
+	"github.com/ethereum/go-ethereum/p2p"
 )
 
 var (

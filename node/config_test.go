@@ -24,7 +24,7 @@ import (
 	"testing"
 
 	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/karalabe/tinygeth/p2p"
+	"github.com/ethereum/go-ethereum/p2p"
 )
 
 // Tests that datadirs can be successfully created, be them manually configured

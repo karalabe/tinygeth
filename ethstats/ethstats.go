@@ -33,6 +33,7 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/mclock"
 	"github.com/ethereum/go-ethereum/log"
+	"github.com/ethereum/go-ethereum/p2p"
 	"github.com/gorilla/websocket"
 	"github.com/karalabe/tinygeth"
 	"github.com/karalabe/tinygeth/consensus"
@@ -41,7 +42,6 @@ import (
 	ethproto "github.com/karalabe/tinygeth/eth/protocols/eth"
 	"github.com/karalabe/tinygeth/event"
 	"github.com/karalabe/tinygeth/node"
-	"github.com/karalabe/tinygeth/p2p"
 	"github.com/karalabe/tinygeth/rpc"
 )
 

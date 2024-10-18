@@ -20,7 +20,7 @@
 package node
 
 import (
-	"github.com/karalabe/tinygeth/p2p"
+	"github.com/ethereum/go-ethereum/p2p"
 	"github.com/karalabe/tinygeth/rpc"
 )
 

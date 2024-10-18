@@ -23,9 +23,9 @@ import (
 
 	mapset "github.com/deckarep/golang-set/v2"
 	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/p2p"
 	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/karalabe/tinygeth/core/types"
-	"github.com/karalabe/tinygeth/p2p"
 )
 
 const (

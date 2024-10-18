@@ -22,8 +22,8 @@ import (
 	"path/filepath"
 	"runtime"
 
-	"github.com/karalabe/tinygeth/p2p"
-	"github.com/karalabe/tinygeth/p2p/nat"
+	"github.com/ethereum/go-ethereum/p2p"
+	"github.com/ethereum/go-ethereum/p2p/nat"
 	"github.com/karalabe/tinygeth/rpc"
 )
 

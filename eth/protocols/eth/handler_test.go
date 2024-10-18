@@ -24,6 +24,8 @@ import (
 
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/crypto"
+	"github.com/ethereum/go-ethereum/p2p"
+	"github.com/ethereum/go-ethereum/p2p/enode"
 	"github.com/karalabe/tinygeth/consensus"
 	"github.com/karalabe/tinygeth/consensus/beacon"
 	"github.com/karalabe/tinygeth/consensus/ethash"
@@ -34,8 +36,6 @@ import (
 	"github.com/karalabe/tinygeth/core/types"
 	"github.com/karalabe/tinygeth/core/vm"
 	"github.com/karalabe/tinygeth/ethdb"
-	"github.com/karalabe/tinygeth/p2p"
-	"github.com/karalabe/tinygeth/p2p/enode"
 	"github.com/karalabe/tinygeth/params"
 )
 

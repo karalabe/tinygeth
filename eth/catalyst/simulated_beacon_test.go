@@ -24,6 +24,7 @@ import (
 
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/crypto"
+	"github.com/ethereum/go-ethereum/p2p"
 	"github.com/karalabe/tinygeth/core"
 	"github.com/karalabe/tinygeth/core/types"
 	"github.com/karalabe/tinygeth/eth"
@@ -31,7 +32,6 @@ import (
 	"github.com/karalabe/tinygeth/eth/ethconfig"
 	"github.com/karalabe/tinygeth/miner"
 	"github.com/karalabe/tinygeth/node"
-	"github.com/karalabe/tinygeth/p2p"
 	"github.com/karalabe/tinygeth/params"
 )
 

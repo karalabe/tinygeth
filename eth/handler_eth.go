@@ -20,10 +20,10 @@ import (
 	"errors"
 	"fmt"
 
+	"github.com/ethereum/go-ethereum/p2p/enode"
 	"github.com/karalabe/tinygeth/core"
 	"github.com/karalabe/tinygeth/core/types"
 	"github.com/karalabe/tinygeth/eth/protocols/eth"
-	"github.com/karalabe/tinygeth/p2p/enode"
 )
 
 // ethHandler implements the eth.Backend interface to handle the various network

@@ -32,13 +32,13 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/ethereum/go-ethereum/log"
+	"github.com/ethereum/go-ethereum/p2p"
 	"github.com/gofrs/flock"
 	"github.com/karalabe/tinygeth/accounts"
 	"github.com/karalabe/tinygeth/core/rawdb"
 	"github.com/karalabe/tinygeth/ethdb"
 	"github.com/karalabe/tinygeth/ethdb/memorydb"
 	"github.com/karalabe/tinygeth/event"
-	"github.com/karalabe/tinygeth/p2p"
 	"github.com/karalabe/tinygeth/rpc"
 )
 

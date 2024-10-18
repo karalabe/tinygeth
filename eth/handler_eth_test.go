@@ -23,6 +23,8 @@ import (
 	"time"
 
 	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/p2p"
+	"github.com/ethereum/go-ethereum/p2p/enode"
 	"github.com/karalabe/tinygeth/consensus/ethash"
 	"github.com/karalabe/tinygeth/core"
 	"github.com/karalabe/tinygeth/core/forkid"
@@ -32,8 +34,6 @@ import (
 	"github.com/karalabe/tinygeth/eth/downloader"
 	"github.com/karalabe/tinygeth/eth/protocols/eth"
 	"github.com/karalabe/tinygeth/event"
-	"github.com/karalabe/tinygeth/p2p"
-	"github.com/karalabe/tinygeth/p2p/enode"
 	"github.com/karalabe/tinygeth/params"
 )
 

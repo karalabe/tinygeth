@@ -21,9 +21,9 @@ import (
 	"testing"
 
 	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/p2p"
+	"github.com/ethereum/go-ethereum/p2p/enode"
 	"github.com/karalabe/tinygeth/core/forkid"
-	"github.com/karalabe/tinygeth/p2p"
-	"github.com/karalabe/tinygeth/p2p/enode"
 )
 
 // Tests that handshake failures are detected and reported correctly.

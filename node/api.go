@@ -24,10 +24,10 @@ import (
 	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/log"
+	"github.com/ethereum/go-ethereum/p2p"
+	"github.com/ethereum/go-ethereum/p2p/discover"
+	"github.com/ethereum/go-ethereum/p2p/enode"
 	"github.com/karalabe/tinygeth/internal/debug"
-	"github.com/karalabe/tinygeth/p2p"
-	"github.com/karalabe/tinygeth/p2p/discover"
-	"github.com/karalabe/tinygeth/p2p/enode"
 	"github.com/karalabe/tinygeth/rpc"
 )
 

@@ -25,6 +25,8 @@ import (
 	"time"
 
 	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/p2p"
+	"github.com/ethereum/go-ethereum/p2p/enode"
 	"github.com/ethereum/go-ethereum/rlp"
 	fuzz "github.com/google/gofuzz"
 	"github.com/karalabe/tinygeth/consensus/ethash"
@@ -32,8 +34,6 @@ import (
 	"github.com/karalabe/tinygeth/core/rawdb"
 	"github.com/karalabe/tinygeth/core/types"
 	"github.com/karalabe/tinygeth/core/vm"
-	"github.com/karalabe/tinygeth/p2p"
-	"github.com/karalabe/tinygeth/p2p/enode"
 	"github.com/karalabe/tinygeth/params"
 )
 

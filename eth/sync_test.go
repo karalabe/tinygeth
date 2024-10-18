@@ -20,11 +20,11 @@ import (
 	"testing"
 	"time"
 
+	"github.com/ethereum/go-ethereum/p2p"
+	"github.com/ethereum/go-ethereum/p2p/enode"
 	"github.com/karalabe/tinygeth/eth/downloader"
 	"github.com/karalabe/tinygeth/eth/protocols/eth"
 	"github.com/karalabe/tinygeth/eth/protocols/snap"
-	"github.com/karalabe/tinygeth/p2p"
-	"github.com/karalabe/tinygeth/p2p/enode"
 )
 
 // Tests that snap sync is disabled after a successful sync cycle.
