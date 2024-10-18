@@ -28,9 +28,9 @@ import (
 	"runtime"
 
 	"github.com/ethereum/go-ethereum/log"
+	"github.com/ethereum/go-ethereum/metrics"
+	"github.com/ethereum/go-ethereum/metrics/exp"
 	"github.com/karalabe/tinygeth/internal/flags"
-	"github.com/karalabe/tinygeth/metrics"
-	"github.com/karalabe/tinygeth/metrics/exp"
 	"github.com/mattn/go-colorable"
 	"github.com/mattn/go-isatty"
 	"github.com/urfave/cli/v2"

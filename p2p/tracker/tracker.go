@@ -23,7 +23,7 @@ import (
 	"time"
 
 	"github.com/ethereum/go-ethereum/log"
-	"github.com/karalabe/tinygeth/metrics"
+	"github.com/ethereum/go-ethereum/metrics"
 )
 
 const (

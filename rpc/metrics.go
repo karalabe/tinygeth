@@ -20,7 +20,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/karalabe/tinygeth/metrics"
+	"github.com/ethereum/go-ethereum/metrics"
 )
 
 var (

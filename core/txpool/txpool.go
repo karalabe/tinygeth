@@ -23,12 +23,12 @@ import (
 	"sync"
 
 	"github.com/ethereum/go-ethereum/log"
+	"github.com/ethereum/go-ethereum/metrics"
 	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/core"
 	"github.com/karalabe/tinygeth/core/types"
 	"github.com/karalabe/tinygeth/crypto/kzg4844"
 	"github.com/karalabe/tinygeth/event"
-	"github.com/karalabe/tinygeth/metrics"
 )
 
 // TxStatus is the current status of a transaction as seen by the pool.

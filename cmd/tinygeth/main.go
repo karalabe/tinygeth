@@ -26,6 +26,7 @@ import (
 	"time"
 
 	"github.com/ethereum/go-ethereum/log"
+	"github.com/ethereum/go-ethereum/metrics"
 	"github.com/karalabe/tinygeth/accounts"
 	"github.com/karalabe/tinygeth/accounts/keystore"
 	"github.com/karalabe/tinygeth/cmd/utils"
@@ -35,7 +36,6 @@ import (
 	"github.com/karalabe/tinygeth/ethclient"
 	"github.com/karalabe/tinygeth/internal/debug"
 	"github.com/karalabe/tinygeth/internal/flags"
-	"github.com/karalabe/tinygeth/metrics"
 	"github.com/karalabe/tinygeth/node"
 	"go.uber.org/automaxprocs/maxprocs"
 

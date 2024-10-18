@@ -22,6 +22,7 @@ import (
 	"sync"
 
 	"github.com/ethereum/go-ethereum/log"
+	"github.com/ethereum/go-ethereum/metrics"
 	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/common/hexutil"
 	"github.com/karalabe/tinygeth/common/prque"
@@ -29,7 +30,6 @@ import (
 	"github.com/karalabe/tinygeth/core/types"
 	"github.com/karalabe/tinygeth/crypto"
 	"github.com/karalabe/tinygeth/ethdb"
-	"github.com/karalabe/tinygeth/metrics"
 )
 
 // ErrNotRequested is returned by the trie sync when it's requested to process a

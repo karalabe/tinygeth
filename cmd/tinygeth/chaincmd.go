@@ -27,6 +27,7 @@ import (
 	"time"
 
 	"github.com/ethereum/go-ethereum/log"
+	"github.com/ethereum/go-ethereum/metrics"
 	"github.com/karalabe/tinygeth/cmd/utils"
 	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/common/hexutil"
@@ -38,7 +39,6 @@ import (
 	"github.com/karalabe/tinygeth/ethdb"
 	"github.com/karalabe/tinygeth/internal/era"
 	"github.com/karalabe/tinygeth/internal/flags"
-	"github.com/karalabe/tinygeth/metrics"
 	"github.com/karalabe/tinygeth/params"
 	"github.com/urfave/cli/v2"
 )

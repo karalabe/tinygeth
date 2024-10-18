@@ -22,7 +22,7 @@ import (
 	"errors"
 	"net"
 
-	"github.com/karalabe/tinygeth/metrics"
+	"github.com/ethereum/go-ethereum/metrics"
 )
 
 const (

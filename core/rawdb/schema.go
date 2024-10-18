@@ -21,9 +21,9 @@ import (
 	"bytes"
 	"encoding/binary"
 
+	"github.com/ethereum/go-ethereum/metrics"
 	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/crypto"
-	"github.com/karalabe/tinygeth/metrics"
 )
 
 // The fields below define the low level database schema prefixing.

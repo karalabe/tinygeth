@@ -17,7 +17,7 @@
 package snap
 
 import (
-	"github.com/karalabe/tinygeth/metrics"
+	"github.com/ethereum/go-ethereum/metrics"
 )
 
 var (

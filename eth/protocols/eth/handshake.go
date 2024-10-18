@@ -22,9 +22,9 @@ import (
 	"math/big"
 	"time"
 
+	"github.com/ethereum/go-ethereum/metrics"
 	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/core/forkid"
-	"github.com/karalabe/tinygeth/metrics"
 	"github.com/karalabe/tinygeth/p2p"
 )
 

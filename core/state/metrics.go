@@ -16,7 +16,7 @@
 
 package state
 
-import "github.com/karalabe/tinygeth/metrics"
+import "github.com/ethereum/go-ethereum/metrics"
 
 var (
 	accountReadMeters        = metrics.NewRegisteredMeter("state/read/accounts", nil)

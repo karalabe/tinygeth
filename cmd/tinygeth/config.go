@@ -27,6 +27,7 @@ import (
 	"unicode"
 
 	"github.com/ethereum/go-ethereum/log"
+	"github.com/ethereum/go-ethereum/metrics"
 	"github.com/karalabe/tinygeth/accounts"
 	"github.com/karalabe/tinygeth/accounts/keystore"
 	"github.com/karalabe/tinygeth/beacon/blsync"
@@ -37,7 +38,6 @@ import (
 	"github.com/karalabe/tinygeth/eth/ethconfig"
 	"github.com/karalabe/tinygeth/internal/flags"
 	"github.com/karalabe/tinygeth/internal/version"
-	"github.com/karalabe/tinygeth/metrics"
 	"github.com/karalabe/tinygeth/node"
 	"github.com/karalabe/tinygeth/params"
 	"github.com/karalabe/tinygeth/rpc"

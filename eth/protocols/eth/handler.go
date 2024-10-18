@@ -21,10 +21,10 @@ import (
 	"math/big"
 	"time"
 
+	"github.com/ethereum/go-ethereum/metrics"
 	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/core"
 	"github.com/karalabe/tinygeth/core/types"
-	"github.com/karalabe/tinygeth/metrics"
 	"github.com/karalabe/tinygeth/p2p"
 	"github.com/karalabe/tinygeth/p2p/enode"
 	"github.com/karalabe/tinygeth/p2p/enr"

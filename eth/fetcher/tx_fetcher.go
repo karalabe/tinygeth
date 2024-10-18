@@ -25,12 +25,12 @@ import (
 	"time"
 
 	"github.com/ethereum/go-ethereum/log"
+	"github.com/ethereum/go-ethereum/metrics"
 	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/common/lru"
 	"github.com/karalabe/tinygeth/common/mclock"
 	"github.com/karalabe/tinygeth/core/txpool"
 	"github.com/karalabe/tinygeth/core/types"
-	"github.com/karalabe/tinygeth/metrics"
 )
 
 const (

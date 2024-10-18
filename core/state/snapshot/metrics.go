@@ -16,7 +16,7 @@
 
 package snapshot
 
-import "github.com/karalabe/tinygeth/metrics"
+import "github.com/ethereum/go-ethereum/metrics"
 
 // Metrics in generation
 var (
