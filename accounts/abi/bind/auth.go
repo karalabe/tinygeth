@@ -25,7 +25,6 @@ import (
 
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/karalabe/tinygeth/accounts"
-	"github.com/karalabe/tinygeth/accounts/external"
 	"github.com/karalabe/tinygeth/accounts/keystore"
 	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/core/types"
@@ -161,19 +160,4 @@ func NewKeyedTransactorWithChainID(key *ecdsa.PrivateKey, chainID *big.Int) (*Tr
 		},
 		Context: context.Background(),
 	}, nil
-}
-
-// NewClefTransactor is a utility method to easily create a transaction signer
-// with a clef backend.
-func NewClefTransactor(clef *external.ExternalSigner, account accounts.Account) *TransactOpts {
-	return &TransactOpts{
-		From: account.Address,
-		Signer: func(address common.Address, transaction *types.Transaction) (*types.Transaction, error) {
-			if address != account.Address {
-				return nil, ErrNotAuthorized
-			}
-			return clef.SignTx(account, transaction, nil) // Clef enforces its own chain id
-		},
-		Context: context.Background(),
-	}
 }

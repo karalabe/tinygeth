@@ -28,7 +28,6 @@ import (
 
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/karalabe/tinygeth/accounts"
-	"github.com/karalabe/tinygeth/accounts/external"
 	"github.com/karalabe/tinygeth/accounts/keystore"
 	"github.com/karalabe/tinygeth/accounts/scwallet"
 	"github.com/karalabe/tinygeth/accounts/usbwallet"
@@ -334,18 +333,6 @@ func setAccountManagerBackends(conf *node.Config, am *accounts.Manager, keydir s
 		scryptN = keystore.LightScryptN
 		scryptP = keystore.LightScryptP
 	}
-
-	// Assemble the supported backends
-	if len(conf.ExternalSigner) > 0 {
-		log.Info("Using external signer", "url", conf.ExternalSigner)
-		if extBackend, err := external.NewExternalBackend(conf.ExternalSigner); err == nil {
-			am.AddBackend(extBackend)
-			return nil
-		} else {
-			return fmt.Errorf("error connecting to external signer: %v", err)
-		}
-	}
-
 	// For now, we're using EITHER external signer OR local signers.
 	// If/when we implement some form of lockfile for USB and keystore wallets,
 	// we can have both, but it's very confusing for the user to see the same

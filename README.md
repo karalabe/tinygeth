@@ -13,11 +13,8 @@ Tiny Geth is Peter's personal, opinionated "fork" of go-ethereum. It's not a com
 
 These are the approximate changes compared upstream:
 
-- Remove all the go-ethereum repository meta files.
-- Remove all the go-ethereum utility commands.
-- Rename main binary to `tinygeth` to avoid clashes.
-- Relink `rlp` to be a dependency from upstream.
-- Relink `log` to be a dependency from upstream.
+- Tiny Geth does not support account management.
+  - Ethereum nodes should not concern themselves with being wallets. Whilst having a wallet implementation in Go is useful (please use go-ethereum as a library), having a keystore inside a running node is not.
 
 ## Commit history
 
