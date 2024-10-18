@@ -54,7 +54,7 @@ import (
 	"time"
 
 	"github.com/cespare/cp"
-	"github.com/karalabe/tinygeth/common"
+	"github.com/ethereum/go-ethereum/common"
 	"github.com/karalabe/tinygeth/crypto/signify"
 	"github.com/karalabe/tinygeth/internal/build"
 	"github.com/karalabe/tinygeth/params"

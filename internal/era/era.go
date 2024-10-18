@@ -28,9 +28,9 @@ import (
 	"strings"
 	"sync"
 
+	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/golang/snappy"
-	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/core/types"
 	"github.com/karalabe/tinygeth/internal/era/e2store"
 )

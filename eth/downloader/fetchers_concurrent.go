@@ -21,9 +21,9 @@ import (
 	"sort"
 	"time"
 
+	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/common/prque"
 	"github.com/ethereum/go-ethereum/log"
-	"github.com/karalabe/tinygeth/common"
-	"github.com/karalabe/tinygeth/common/prque"
 	"github.com/karalabe/tinygeth/eth/protocols/eth"
 )
 

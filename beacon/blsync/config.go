@@ -17,10 +17,10 @@
 package blsync
 
 import (
+	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/karalabe/tinygeth/beacon/types"
 	"github.com/karalabe/tinygeth/cmd/utils"
-	"github.com/karalabe/tinygeth/common"
-	"github.com/karalabe/tinygeth/common/hexutil"
 	"github.com/urfave/cli/v2"
 )
 

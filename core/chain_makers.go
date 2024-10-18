@@ -20,9 +20,9 @@ import (
 	"fmt"
 	"math/big"
 
+	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-verkle"
 	"github.com/holiman/uint256"
-	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/consensus"
 	"github.com/karalabe/tinygeth/consensus/misc"
 	"github.com/karalabe/tinygeth/consensus/misc/eip1559"

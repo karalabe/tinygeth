@@ -19,7 +19,7 @@ package params
 import (
 	"math/big"
 
-	"github.com/karalabe/tinygeth/common"
+	"github.com/ethereum/go-ethereum/common"
 )
 
 const (

@@ -17,7 +17,7 @@
 package engine
 
 import (
-	"github.com/karalabe/tinygeth/common"
+	"github.com/ethereum/go-ethereum/common"
 	"github.com/karalabe/tinygeth/rpc"
 )
 

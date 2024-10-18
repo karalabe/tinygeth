@@ -20,7 +20,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/karalabe/tinygeth/common"
+	"github.com/ethereum/go-ethereum/common"
 	"github.com/karalabe/tinygeth/core/types"
 	"github.com/protolambda/zrnt/eth2/beacon/capella"
 	zrntcommon "github.com/protolambda/zrnt/eth2/beacon/common"

@@ -19,9 +19,9 @@ package state
 import (
 	"maps"
 
+	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/common/math"
 	"github.com/holiman/uint256"
-	"github.com/karalabe/tinygeth/common"
-	"github.com/karalabe/tinygeth/common/math"
 	"github.com/karalabe/tinygeth/params"
 	"github.com/karalabe/tinygeth/trie/utils"
 )

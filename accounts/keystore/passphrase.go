@@ -37,10 +37,10 @@ import (
 	"os"
 	"path/filepath"
 
+	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/common/math"
 	"github.com/google/uuid"
 	"github.com/karalabe/tinygeth/accounts"
-	"github.com/karalabe/tinygeth/common"
-	"github.com/karalabe/tinygeth/common/math"
 	"github.com/karalabe/tinygeth/crypto"
 	"golang.org/x/crypto/pbkdf2"
 	"golang.org/x/crypto/scrypt"

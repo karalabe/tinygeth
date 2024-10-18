@@ -22,7 +22,7 @@
 package remotedb
 
 import (
-	"github.com/karalabe/tinygeth/common/hexutil"
+	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/karalabe/tinygeth/ethdb"
 	"github.com/karalabe/tinygeth/rpc"
 )

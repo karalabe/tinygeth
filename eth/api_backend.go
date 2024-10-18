@@ -22,9 +22,9 @@ import (
 	"math/big"
 	"time"
 
+	"github.com/ethereum/go-ethereum/common"
 	"github.com/karalabe/tinygeth"
 	"github.com/karalabe/tinygeth/accounts"
-	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/consensus"
 	"github.com/karalabe/tinygeth/consensus/misc/eip4844"
 	"github.com/karalabe/tinygeth/core"

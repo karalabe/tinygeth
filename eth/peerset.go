@@ -21,7 +21,7 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/karalabe/tinygeth/common"
+	"github.com/ethereum/go-ethereum/common"
 	"github.com/karalabe/tinygeth/eth/protocols/eth"
 	"github.com/karalabe/tinygeth/eth/protocols/snap"
 	"github.com/karalabe/tinygeth/p2p"

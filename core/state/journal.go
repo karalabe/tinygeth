@@ -22,8 +22,8 @@ import (
 	"slices"
 	"sort"
 
+	"github.com/ethereum/go-ethereum/common"
 	"github.com/holiman/uint256"
-	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/core/types"
 )
 

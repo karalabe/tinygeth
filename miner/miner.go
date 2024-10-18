@@ -23,8 +23,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/karalabe/tinygeth/common"
-	"github.com/karalabe/tinygeth/common/hexutil"
+	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/karalabe/tinygeth/consensus"
 	"github.com/karalabe/tinygeth/core"
 	"github.com/karalabe/tinygeth/core/state"

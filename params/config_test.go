@@ -22,7 +22,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/karalabe/tinygeth/common/math"
+	"github.com/ethereum/go-ethereum/common/math"
 	"github.com/stretchr/testify/require"
 )
 

@@ -20,8 +20,8 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/karalabe/tinygeth/common"
-	"github.com/karalabe/tinygeth/common/math"
+	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/common/math"
 	"github.com/karalabe/tinygeth/consensus/ethash"
 	"github.com/karalabe/tinygeth/core/types"
 	"github.com/karalabe/tinygeth/params"

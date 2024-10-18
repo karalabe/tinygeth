@@ -29,12 +29,12 @@ import (
 	"time"
 
 	"github.com/donovanhide/eventsource"
+	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/karalabe/tinygeth/beacon/merkle"
 	"github.com/karalabe/tinygeth/beacon/params"
 	"github.com/karalabe/tinygeth/beacon/types"
-	"github.com/karalabe/tinygeth/common"
-	"github.com/karalabe/tinygeth/common/hexutil"
 )
 
 var (

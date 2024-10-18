@@ -19,9 +19,9 @@ package pathdb
 import (
 	"fmt"
 
+	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/ethereum/go-ethereum/log"
-	"github.com/karalabe/tinygeth/common"
-	"github.com/karalabe/tinygeth/common/hexutil"
 	"github.com/karalabe/tinygeth/triedb/database"
 )
 

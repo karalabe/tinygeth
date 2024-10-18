@@ -20,8 +20,8 @@ import (
 	"bytes"
 	"testing"
 
+	"github.com/ethereum/go-ethereum/common"
 	"github.com/karalabe/tinygeth/accounts/abi"
-	"github.com/karalabe/tinygeth/common"
 )
 
 var (

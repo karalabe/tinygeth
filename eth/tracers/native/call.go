@@ -22,9 +22,9 @@ import (
 	"math/big"
 	"sync/atomic"
 
+	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/karalabe/tinygeth/accounts/abi"
-	"github.com/karalabe/tinygeth/common"
-	"github.com/karalabe/tinygeth/common/hexutil"
 	"github.com/karalabe/tinygeth/core/tracing"
 	"github.com/karalabe/tinygeth/core/types"
 	"github.com/karalabe/tinygeth/core/vm"

@@ -21,9 +21,9 @@ import (
 	"testing"
 	"time"
 
+	"github.com/ethereum/go-ethereum/common/mclock"
 	"github.com/karalabe/tinygeth/beacon/params"
 	"github.com/karalabe/tinygeth/beacon/types"
-	"github.com/karalabe/tinygeth/common/mclock"
 	"github.com/karalabe/tinygeth/ethdb/memorydb"
 )
 

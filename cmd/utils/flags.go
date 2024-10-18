@@ -35,6 +35,8 @@ import (
 	"strings"
 	"time"
 
+	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/common/fdlimit"
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/ethereum/go-ethereum/metrics"
 	"github.com/ethereum/go-ethereum/metrics/exp"
@@ -43,8 +45,6 @@ import (
 	"github.com/karalabe/tinygeth/accounts"
 	"github.com/karalabe/tinygeth/accounts/keystore"
 	bparams "github.com/karalabe/tinygeth/beacon/params"
-	"github.com/karalabe/tinygeth/common"
-	"github.com/karalabe/tinygeth/common/fdlimit"
 	"github.com/karalabe/tinygeth/core"
 	"github.com/karalabe/tinygeth/core/rawdb"
 	"github.com/karalabe/tinygeth/core/txpool/blobpool"

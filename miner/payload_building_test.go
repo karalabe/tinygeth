@@ -22,9 +22,9 @@ import (
 	"testing"
 	"time"
 
+	"github.com/ethereum/go-ethereum/common"
 	"github.com/karalabe/tinygeth/accounts"
 	"github.com/karalabe/tinygeth/beacon/engine"
-	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/consensus"
 	"github.com/karalabe/tinygeth/consensus/clique"
 	"github.com/karalabe/tinygeth/consensus/ethash"

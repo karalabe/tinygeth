@@ -22,7 +22,7 @@ import (
 	"math/big"
 	"slices"
 
-	"github.com/karalabe/tinygeth/common"
+	"github.com/ethereum/go-ethereum/common"
 	"github.com/karalabe/tinygeth/core/bloombits"
 	"github.com/karalabe/tinygeth/core/types"
 	"github.com/karalabe/tinygeth/rpc"

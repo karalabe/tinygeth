@@ -19,7 +19,7 @@ package state
 import (
 	"testing"
 
-	"github.com/karalabe/tinygeth/common"
+	"github.com/ethereum/go-ethereum/common"
 	"github.com/karalabe/tinygeth/params"
 	"github.com/karalabe/tinygeth/trie/utils"
 )

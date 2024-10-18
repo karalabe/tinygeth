@@ -21,9 +21,9 @@ import (
 	"errors"
 	"fmt"
 
+	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-verkle"
 	"github.com/holiman/uint256"
-	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/core/types"
 	"github.com/karalabe/tinygeth/ethdb"
 	"github.com/karalabe/tinygeth/trie/trienode"

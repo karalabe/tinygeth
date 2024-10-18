@@ -16,7 +16,7 @@
 
 package database
 
-import "github.com/karalabe/tinygeth/common"
+import "github.com/ethereum/go-ethereum/common"
 
 // Reader wraps the Node method of a backing trie reader.
 type Reader interface {

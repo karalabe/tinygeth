@@ -17,13 +17,13 @@
 package blsync
 
 import (
+	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/common/lru"
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/karalabe/tinygeth/beacon/light/request"
 	"github.com/karalabe/tinygeth/beacon/light/sync"
 	"github.com/karalabe/tinygeth/beacon/params"
 	"github.com/karalabe/tinygeth/beacon/types"
-	"github.com/karalabe/tinygeth/common"
-	"github.com/karalabe/tinygeth/common/lru"
 	"github.com/karalabe/tinygeth/event"
 )
 

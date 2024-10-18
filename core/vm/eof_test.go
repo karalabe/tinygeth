@@ -22,7 +22,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/karalabe/tinygeth/common"
+	"github.com/ethereum/go-ethereum/common"
 )
 
 func TestEOFMarshaling(t *testing.T) {

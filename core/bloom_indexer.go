@@ -20,8 +20,8 @@ import (
 	"context"
 	"time"
 
-	"github.com/karalabe/tinygeth/common"
-	"github.com/karalabe/tinygeth/common/bitutil"
+	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/common/bitutil"
 	"github.com/karalabe/tinygeth/core/bloombits"
 	"github.com/karalabe/tinygeth/core/rawdb"
 	"github.com/karalabe/tinygeth/core/types"

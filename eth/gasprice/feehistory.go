@@ -26,8 +26,8 @@ import (
 	"slices"
 	"sync/atomic"
 
+	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/log"
-	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/consensus/misc/eip1559"
 	"github.com/karalabe/tinygeth/consensus/misc/eip4844"
 	"github.com/karalabe/tinygeth/core/types"

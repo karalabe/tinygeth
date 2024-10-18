@@ -23,10 +23,10 @@ import (
 	"time"
 
 	mapset "github.com/deckarep/golang-set/v2"
+	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/common/math"
 	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/holiman/uint256"
-	"github.com/karalabe/tinygeth/common"
-	"github.com/karalabe/tinygeth/common/math"
 	"github.com/karalabe/tinygeth/consensus"
 	"github.com/karalabe/tinygeth/consensus/misc"
 	"github.com/karalabe/tinygeth/consensus/misc/eip1559"

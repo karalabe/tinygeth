@@ -25,10 +25,10 @@ import (
 	"sync/atomic"
 	"time"
 
+	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/common/lru"
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/karalabe/tinygeth"
-	"github.com/karalabe/tinygeth/common"
-	"github.com/karalabe/tinygeth/common/lru"
 	"github.com/karalabe/tinygeth/core"
 	"github.com/karalabe/tinygeth/core/bloombits"
 	"github.com/karalabe/tinygeth/core/types"

@@ -25,7 +25,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/karalabe/tinygeth/common"
+	"github.com/ethereum/go-ethereum/common"
 	"github.com/karalabe/tinygeth/crypto"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

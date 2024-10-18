@@ -22,7 +22,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/karalabe/tinygeth/common"
+	"github.com/ethereum/go-ethereum/common"
 	"github.com/karalabe/tinygeth/consensus/ethash"
 	"github.com/karalabe/tinygeth/core"
 	"github.com/karalabe/tinygeth/core/rawdb"

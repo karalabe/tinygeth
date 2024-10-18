@@ -21,9 +21,9 @@ import (
 	"math"
 	"math/big"
 
+	"github.com/ethereum/go-ethereum/common"
+	cmath "github.com/ethereum/go-ethereum/common/math"
 	"github.com/holiman/uint256"
-	"github.com/karalabe/tinygeth/common"
-	cmath "github.com/karalabe/tinygeth/common/math"
 	"github.com/karalabe/tinygeth/core/tracing"
 	"github.com/karalabe/tinygeth/core/types"
 	"github.com/karalabe/tinygeth/core/vm"

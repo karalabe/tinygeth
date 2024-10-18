@@ -21,7 +21,7 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/karalabe/tinygeth/common"
+	"github.com/ethereum/go-ethereum/common"
 	"github.com/karalabe/tinygeth/core/types"
 	"github.com/karalabe/tinygeth/trie/trienode"
 	"github.com/karalabe/tinygeth/trie/triestate"

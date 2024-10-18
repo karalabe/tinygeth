@@ -26,7 +26,7 @@ import (
 	"time"
 
 	"github.com/dop251/goja"
-	"github.com/karalabe/tinygeth/common/hexutil"
+	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/karalabe/tinygeth/console/prompt"
 	"github.com/karalabe/tinygeth/internal/jsre"
 	"github.com/karalabe/tinygeth/rpc"

@@ -20,8 +20,8 @@ import (
 	"fmt"
 	"math/big"
 
+	"github.com/ethereum/go-ethereum/common"
 	"github.com/holiman/uint256"
-	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/core/types"
 	"github.com/karalabe/tinygeth/trie"
 	"github.com/protolambda/zrnt/eth2/beacon/capella"

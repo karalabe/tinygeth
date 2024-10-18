@@ -21,9 +21,9 @@ import (
 	"fmt"
 	"time"
 
+	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/ethereum/go-ethereum/metrics"
-	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/core"
 	"github.com/karalabe/tinygeth/core/types"
 	"github.com/karalabe/tinygeth/p2p"

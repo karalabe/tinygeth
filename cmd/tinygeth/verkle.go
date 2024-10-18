@@ -23,10 +23,10 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/ethereum/go-verkle"
 	"github.com/karalabe/tinygeth/cmd/utils"
-	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/core/rawdb"
 	"github.com/karalabe/tinygeth/internal/flags"
 	"github.com/urfave/cli/v2"

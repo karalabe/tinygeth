@@ -24,11 +24,11 @@ import (
 	"sort"
 	"time"
 
+	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/common/lru"
+	"github.com/ethereum/go-ethereum/common/mclock"
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/ethereum/go-ethereum/metrics"
-	"github.com/karalabe/tinygeth/common"
-	"github.com/karalabe/tinygeth/common/lru"
-	"github.com/karalabe/tinygeth/common/mclock"
 	"github.com/karalabe/tinygeth/core/txpool"
 	"github.com/karalabe/tinygeth/core/types"
 )

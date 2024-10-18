@@ -25,12 +25,12 @@ import (
 	"strings"
 	"time"
 
+	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/ethereum/go-ethereum/metrics"
 	"github.com/karalabe/tinygeth/accounts"
 	"github.com/karalabe/tinygeth/accounts/keystore"
 	"github.com/karalabe/tinygeth/cmd/utils"
-	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/console/prompt"
 	"github.com/karalabe/tinygeth/eth/downloader"
 	"github.com/karalabe/tinygeth/ethclient"

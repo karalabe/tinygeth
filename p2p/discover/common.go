@@ -26,8 +26,8 @@ import (
 	"sync"
 	"time"
 
+	"github.com/ethereum/go-ethereum/common/mclock"
 	"github.com/ethereum/go-ethereum/log"
-	"github.com/karalabe/tinygeth/common/mclock"
 	"github.com/karalabe/tinygeth/p2p/enode"
 	"github.com/karalabe/tinygeth/p2p/enr"
 	"github.com/karalabe/tinygeth/p2p/netutil"

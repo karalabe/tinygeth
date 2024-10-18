@@ -27,9 +27,9 @@ import (
 
 	"github.com/cockroachdb/pebble"
 	"github.com/cockroachdb/pebble/bloom"
+	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/ethereum/go-ethereum/metrics"
-	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/ethdb"
 )
 

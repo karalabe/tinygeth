@@ -24,11 +24,11 @@ import (
 	"runtime"
 	"sync"
 
+	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/karalabe/tinygeth/accounts"
-	"github.com/karalabe/tinygeth/common"
-	"github.com/karalabe/tinygeth/common/hexutil"
 	"github.com/karalabe/tinygeth/consensus"
 	"github.com/karalabe/tinygeth/core"
 	"github.com/karalabe/tinygeth/core/bloombits"

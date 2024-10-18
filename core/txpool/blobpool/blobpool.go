@@ -29,12 +29,12 @@ import (
 	"sync"
 	"time"
 
+	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/ethereum/go-ethereum/metrics"
 	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/holiman/billy"
 	"github.com/holiman/uint256"
-	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/consensus/misc/eip1559"
 	"github.com/karalabe/tinygeth/consensus/misc/eip4844"
 	"github.com/karalabe/tinygeth/core"

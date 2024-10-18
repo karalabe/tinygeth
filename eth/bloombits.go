@@ -19,7 +19,7 @@ package eth
 import (
 	"time"
 
-	"github.com/karalabe/tinygeth/common/bitutil"
+	"github.com/ethereum/go-ethereum/common/bitutil"
 	"github.com/karalabe/tinygeth/core/rawdb"
 )
 

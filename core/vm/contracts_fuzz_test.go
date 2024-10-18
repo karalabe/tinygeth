@@ -19,7 +19,7 @@ package vm
 import (
 	"testing"
 
-	"github.com/karalabe/tinygeth/common"
+	"github.com/ethereum/go-ethereum/common"
 )
 
 func FuzzPrecompiledContracts(f *testing.F) {

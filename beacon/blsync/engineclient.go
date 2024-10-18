@@ -22,10 +22,10 @@ import (
 	"sync"
 	"time"
 
+	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/karalabe/tinygeth/beacon/engine"
 	"github.com/karalabe/tinygeth/beacon/types"
-	"github.com/karalabe/tinygeth/common"
 	ctypes "github.com/karalabe/tinygeth/core/types"
 	"github.com/karalabe/tinygeth/rpc"
 )

@@ -25,8 +25,8 @@ import (
 	"strings"
 	"time"
 
+	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/log"
-	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/ethdb"
 	"github.com/karalabe/tinygeth/ethdb/leveldb"
 	"github.com/karalabe/tinygeth/ethdb/memorydb"

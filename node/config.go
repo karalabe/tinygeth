@@ -25,8 +25,8 @@ import (
 	"runtime"
 	"strings"
 
+	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/log"
-	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/crypto"
 	"github.com/karalabe/tinygeth/p2p"
 	"github.com/karalabe/tinygeth/rpc"

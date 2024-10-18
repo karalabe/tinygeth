@@ -19,13 +19,13 @@ package blsync
 import (
 	"strings"
 
+	"github.com/ethereum/go-ethereum/common/mclock"
 	"github.com/karalabe/tinygeth/beacon/light"
 	"github.com/karalabe/tinygeth/beacon/light/api"
 	"github.com/karalabe/tinygeth/beacon/light/request"
 	"github.com/karalabe/tinygeth/beacon/light/sync"
 	"github.com/karalabe/tinygeth/beacon/types"
 	"github.com/karalabe/tinygeth/cmd/utils"
-	"github.com/karalabe/tinygeth/common/mclock"
 	"github.com/karalabe/tinygeth/ethdb/memorydb"
 	"github.com/karalabe/tinygeth/event"
 	"github.com/karalabe/tinygeth/rpc"

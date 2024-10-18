@@ -26,10 +26,10 @@ import (
 	"sync"
 	"time"
 
+	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/common/bitutil"
 	"github.com/ethereum/go-ethereum/metrics"
 	"github.com/ethereum/go-ethereum/rlp"
-	"github.com/karalabe/tinygeth/common"
-	"github.com/karalabe/tinygeth/common/bitutil"
 	"github.com/karalabe/tinygeth/p2p/rlpx"
 )
 

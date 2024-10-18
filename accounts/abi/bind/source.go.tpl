@@ -11,7 +11,7 @@ import (
 	ethereum "github.com/karalabe/tinygeth"
 	"github.com/karalabe/tinygeth/accounts/abi"
 	"github.com/karalabe/tinygeth/accounts/abi/bind"
-	"github.com/karalabe/tinygeth/common"
+	"github.com/ethereum/go-ethereum/common"
 	"github.com/karalabe/tinygeth/core/types"
 	"github.com/karalabe/tinygeth/event"
 )
