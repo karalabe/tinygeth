@@ -23,6 +23,7 @@ import (
 	"sync/atomic"
 	"time"
 
+	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/common/lru"
 	"github.com/karalabe/tinygeth/consensus"
@@ -31,7 +32,6 @@ import (
 	"github.com/karalabe/tinygeth/ethdb"
 	"github.com/karalabe/tinygeth/log"
 	"github.com/karalabe/tinygeth/params"
-	"github.com/karalabe/tinygeth/rlp"
 )
 
 const (

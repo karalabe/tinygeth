@@ -27,6 +27,7 @@ import (
 	"sync"
 	"time"
 
+	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/karalabe/tinygeth/accounts"
 	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/common/hexutil"
@@ -40,7 +41,6 @@ import (
 	"github.com/karalabe/tinygeth/ethdb"
 	"github.com/karalabe/tinygeth/log"
 	"github.com/karalabe/tinygeth/params"
-	"github.com/karalabe/tinygeth/rlp"
 	"github.com/karalabe/tinygeth/rpc"
 	"github.com/karalabe/tinygeth/trie"
 	"golang.org/x/crypto/sha3"

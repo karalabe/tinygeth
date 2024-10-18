@@ -23,6 +23,7 @@ import (
 	"sync"
 	"time"
 
+	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/karalabe/tinygeth/beacon/engine"
 	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/common/hexutil"
@@ -30,7 +31,6 @@ import (
 	"github.com/karalabe/tinygeth/core/types"
 	"github.com/karalabe/tinygeth/log"
 	"github.com/karalabe/tinygeth/params"
-	"github.com/karalabe/tinygeth/rlp"
 )
 
 // BuildPayloadArgs contains the provided parameters for building payload.

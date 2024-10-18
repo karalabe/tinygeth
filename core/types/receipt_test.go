@@ -24,10 +24,10 @@ import (
 	"reflect"
 	"testing"
 
+	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/holiman/uint256"
 	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/params"
-	"github.com/karalabe/tinygeth/rlp"
 	"github.com/kylelemons/godebug/diff"
 )
 

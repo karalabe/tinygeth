@@ -20,6 +20,7 @@ import (
 	"errors"
 	"math/big"
 
+	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/consensus"
 	"github.com/karalabe/tinygeth/core/rawdb"
@@ -29,7 +30,6 @@ import (
 	"github.com/karalabe/tinygeth/core/vm"
 	"github.com/karalabe/tinygeth/event"
 	"github.com/karalabe/tinygeth/params"
-	"github.com/karalabe/tinygeth/rlp"
 	"github.com/karalabe/tinygeth/triedb"
 )
 

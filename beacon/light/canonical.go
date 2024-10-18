@@ -20,10 +20,10 @@ import (
 	"encoding/binary"
 	"fmt"
 
+	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/karalabe/tinygeth/common/lru"
 	"github.com/karalabe/tinygeth/ethdb"
 	"github.com/karalabe/tinygeth/log"
-	"github.com/karalabe/tinygeth/rlp"
 )
 
 // canonicalStore stores instances of the given type in a database and caches

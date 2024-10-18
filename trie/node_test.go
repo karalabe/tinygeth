@@ -20,8 +20,8 @@ import (
 	"bytes"
 	"testing"
 
+	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/karalabe/tinygeth/crypto"
-	"github.com/karalabe/tinygeth/rlp"
 )
 
 func newTestFullNode(v []byte) []interface{} {

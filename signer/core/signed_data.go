@@ -23,13 +23,13 @@ import (
 	"fmt"
 	"mime"
 
+	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/karalabe/tinygeth/accounts"
 	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/common/hexutil"
 	"github.com/karalabe/tinygeth/consensus/clique"
 	"github.com/karalabe/tinygeth/core/types"
 	"github.com/karalabe/tinygeth/crypto"
-	"github.com/karalabe/tinygeth/rlp"
 	"github.com/karalabe/tinygeth/signer/core/apitypes"
 )
 

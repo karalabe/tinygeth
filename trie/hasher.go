@@ -19,8 +19,8 @@ package trie
 import (
 	"sync"
 
+	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/karalabe/tinygeth/crypto"
-	"github.com/karalabe/tinygeth/rlp"
 )
 
 // hasher is a type used for the trie Hash operation. A hasher has some

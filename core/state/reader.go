@@ -20,11 +20,11 @@ import (
 	"errors"
 	"maps"
 
+	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/core/state/snapshot"
 	"github.com/karalabe/tinygeth/core/types"
 	"github.com/karalabe/tinygeth/crypto"
-	"github.com/karalabe/tinygeth/rlp"
 	"github.com/karalabe/tinygeth/trie"
 	"github.com/karalabe/tinygeth/trie/utils"
 	"github.com/karalabe/tinygeth/triedb"

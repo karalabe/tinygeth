@@ -24,6 +24,7 @@ import (
 	"runtime"
 	"sync"
 
+	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/karalabe/tinygeth/accounts"
 	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/common/hexutil"
@@ -54,7 +55,6 @@ import (
 	"github.com/karalabe/tinygeth/p2p/dnsdisc"
 	"github.com/karalabe/tinygeth/p2p/enode"
 	"github.com/karalabe/tinygeth/params"
-	"github.com/karalabe/tinygeth/rlp"
 	"github.com/karalabe/tinygeth/rpc"
 )
 

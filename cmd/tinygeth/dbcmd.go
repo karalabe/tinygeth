@@ -27,6 +27,7 @@ import (
 	"syscall"
 	"time"
 
+	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/karalabe/tinygeth/cmd/utils"
 	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/common/hexutil"
@@ -38,7 +39,6 @@ import (
 	"github.com/karalabe/tinygeth/ethdb"
 	"github.com/karalabe/tinygeth/internal/flags"
 	"github.com/karalabe/tinygeth/log"
-	"github.com/karalabe/tinygeth/rlp"
 	"github.com/karalabe/tinygeth/trie"
 	"github.com/karalabe/tinygeth/triedb"
 	"github.com/olekukonko/tablewriter"

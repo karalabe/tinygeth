@@ -31,6 +31,7 @@ import (
 	"testing/quick"
 
 	"github.com/davecgh/go-spew/spew"
+	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/holiman/uint256"
 	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/core/rawdb"
@@ -38,7 +39,6 @@ import (
 	"github.com/karalabe/tinygeth/crypto"
 	"github.com/karalabe/tinygeth/ethdb"
 	"github.com/karalabe/tinygeth/internal/testrand"
-	"github.com/karalabe/tinygeth/rlp"
 	"github.com/karalabe/tinygeth/trie/trienode"
 	"golang.org/x/crypto/sha3"
 )

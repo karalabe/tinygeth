@@ -28,6 +28,7 @@ import (
 	"sync"
 	"testing"
 
+	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/holiman/billy"
 	"github.com/holiman/uint256"
 	"github.com/karalabe/tinygeth/common"
@@ -41,7 +42,6 @@ import (
 	"github.com/karalabe/tinygeth/crypto"
 	"github.com/karalabe/tinygeth/crypto/kzg4844"
 	"github.com/karalabe/tinygeth/params"
-	"github.com/karalabe/tinygeth/rlp"
 )
 
 var (

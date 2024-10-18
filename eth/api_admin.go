@@ -24,9 +24,9 @@ import (
 	"os"
 	"strings"
 
+	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/karalabe/tinygeth/core"
 	"github.com/karalabe/tinygeth/core/types"
-	"github.com/karalabe/tinygeth/rlp"
 )
 
 // AdminAPI is the collection of Ethereum full node related APIs for node

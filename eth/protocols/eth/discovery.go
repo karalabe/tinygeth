@@ -17,10 +17,10 @@
 package eth
 
 import (
+	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/karalabe/tinygeth/core"
 	"github.com/karalabe/tinygeth/core/forkid"
 	"github.com/karalabe/tinygeth/p2p/enode"
-	"github.com/karalabe/tinygeth/rlp"
 )
 
 // enrEntry is the ENR entry which advertises `eth` protocol on the discovery.

@@ -20,8 +20,8 @@ import (
 	"bytes"
 	"math/big"
 
+	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/karalabe/tinygeth/common"
-	"github.com/karalabe/tinygeth/rlp"
 )
 
 //go:generate go run github.com/fjl/gencodec -type AccessTuple -out gen_access_tuple.go

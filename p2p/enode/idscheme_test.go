@@ -23,9 +23,9 @@ import (
 	"math/big"
 	"testing"
 
+	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/karalabe/tinygeth/crypto"
 	"github.com/karalabe/tinygeth/p2p/enr"
-	"github.com/karalabe/tinygeth/rlp"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

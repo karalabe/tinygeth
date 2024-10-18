@@ -20,11 +20,11 @@ import (
 	"fmt"
 	"net"
 
+	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/karalabe/tinygeth/common/hexutil"
 	"github.com/karalabe/tinygeth/common/mclock"
 	"github.com/karalabe/tinygeth/p2p/enode"
 	"github.com/karalabe/tinygeth/p2p/enr"
-	"github.com/karalabe/tinygeth/rlp"
 )
 
 // Packet is implemented by all message types.

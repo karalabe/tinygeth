@@ -24,6 +24,7 @@ import (
 	"testing"
 	"time"
 
+	"github.com/ethereum/go-ethereum/rlp"
 	fuzz "github.com/google/gofuzz"
 	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/consensus/ethash"
@@ -34,7 +35,6 @@ import (
 	"github.com/karalabe/tinygeth/p2p"
 	"github.com/karalabe/tinygeth/p2p/enode"
 	"github.com/karalabe/tinygeth/params"
-	"github.com/karalabe/tinygeth/rlp"
 )
 
 func FuzzARange(f *testing.F) {

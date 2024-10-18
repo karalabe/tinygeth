@@ -24,6 +24,7 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/karalabe/tinygeth"
 	"github.com/karalabe/tinygeth/accounts/abi"
 	"github.com/karalabe/tinygeth/accounts/abi/bind"
@@ -31,7 +32,6 @@ import (
 	"github.com/karalabe/tinygeth/common/hexutil"
 	"github.com/karalabe/tinygeth/core/types"
 	"github.com/karalabe/tinygeth/crypto"
-	"github.com/karalabe/tinygeth/rlp"
 	"github.com/stretchr/testify/assert"
 )
 

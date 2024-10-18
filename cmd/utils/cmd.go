@@ -33,6 +33,7 @@ import (
 	"syscall"
 	"time"
 
+	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/core"
 	"github.com/karalabe/tinygeth/core/rawdb"
@@ -46,7 +47,6 @@ import (
 	"github.com/karalabe/tinygeth/log"
 	"github.com/karalabe/tinygeth/node"
 	"github.com/karalabe/tinygeth/params"
-	"github.com/karalabe/tinygeth/rlp"
 	"github.com/urfave/cli/v2"
 )
 

@@ -27,10 +27,10 @@ import (
 	"slices"
 	"strings"
 
+	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/karalabe/tinygeth/crypto"
 	"github.com/karalabe/tinygeth/p2p/enode"
 	"github.com/karalabe/tinygeth/p2p/enr"
-	"github.com/karalabe/tinygeth/rlp"
 	"golang.org/x/crypto/sha3"
 )
 

@@ -28,10 +28,10 @@ import (
 	"fmt"
 	"hash"
 
+	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/karalabe/tinygeth/common/mclock"
 	"github.com/karalabe/tinygeth/p2p/enode"
 	"github.com/karalabe/tinygeth/p2p/enr"
-	"github.com/karalabe/tinygeth/rlp"
 )
 
 // TODO concurrent WHOAREYOU tie-breaker

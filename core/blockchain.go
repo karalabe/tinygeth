@@ -29,6 +29,7 @@ import (
 	"sync/atomic"
 	"time"
 
+	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/common/lru"
 	"github.com/karalabe/tinygeth/common/mclock"
@@ -49,7 +50,6 @@ import (
 	"github.com/karalabe/tinygeth/log"
 	"github.com/karalabe/tinygeth/metrics"
 	"github.com/karalabe/tinygeth/params"
-	"github.com/karalabe/tinygeth/rlp"
 	"github.com/karalabe/tinygeth/triedb"
 	"github.com/karalabe/tinygeth/triedb/hashdb"
 	"github.com/karalabe/tinygeth/triedb/pathdb"

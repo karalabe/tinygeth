@@ -25,9 +25,9 @@ import (
 	"sync"
 	"testing"
 
+	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/karalabe/tinygeth/core/rawdb/ancienttest"
 	"github.com/karalabe/tinygeth/ethdb"
-	"github.com/karalabe/tinygeth/rlp"
 	"github.com/stretchr/testify/require"
 )
 

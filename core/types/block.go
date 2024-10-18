@@ -28,10 +28,10 @@ import (
 	"sync/atomic"
 	"time"
 
+	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/ethereum/go-verkle"
 	"github.com/karalabe/tinygeth/common"
 	"github.com/karalabe/tinygeth/common/hexutil"
-	"github.com/karalabe/tinygeth/rlp"
 )
 
 // A BlockNonce is a 64-bit hash which proves (combined with the

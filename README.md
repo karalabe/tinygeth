@@ -16,6 +16,7 @@ These are the approximate changes compared upstream:
 - Remove all the go-ethereum repository meta files.
 - Remove all the go-ethereum utility commands.
 - Rename main binary to `tinygeth` to avoid clashes.
+- Relink `rlp` to be a dependency from upstream.
 
 ## Commit history
 

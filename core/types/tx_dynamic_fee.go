@@ -20,8 +20,8 @@ import (
 	"bytes"
 	"math/big"
 
+	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/karalabe/tinygeth/common"
-	"github.com/karalabe/tinygeth/rlp"
 )
 
 // DynamicFeeTx represents an EIP-1559 transaction.
