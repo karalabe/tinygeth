@@ -34,7 +34,6 @@ import (
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/ethereum/go-ethereum/p2p"
 	"github.com/gofrs/flock"
-	"github.com/karalabe/tinygeth/accounts"
 	"github.com/karalabe/tinygeth/core/rawdb"
 	"github.com/karalabe/tinygeth/ethdb"
 	"github.com/karalabe/tinygeth/ethdb/memorydb"
@@ -46,10 +45,7 @@ import (
 type Node struct {
 	eventmux      *event.TypeMux
 	config        *Config
-	accman        *accounts.Manager
 	log           log.Logger
-	keyDir        string        // key store directory
-	keyDirTemp    bool          // If true, key directory will be removed by Stop
 	dirLock       *flock.Flock  // prevents concurrent use of instance directory
 	stop          chan struct{} // Channel to wait for termination notifications
 	server        *p2p.Server   // Currently running P2P networking layer
@@ -97,9 +93,6 @@ func New(conf *Config) (*Node, error) {
 	if strings.ContainsAny(conf.Name, `/\`) {
 		return nil, errors.New(`Config.Name must not contain '/' or '\'`)
 	}
-	if conf.Name == datadirDefaultKeyStore {
-		return nil, errors.New(`Config.Name cannot be "` + datadirDefaultKeyStore + `"`)
-	}
 	if strings.HasSuffix(conf.Name, ".ipc") {
 		return nil, errors.New(`Config.Name cannot end in ".ipc"`)
 	}
@@ -122,16 +115,6 @@ func New(conf *Config) (*Node, error) {
 	if err := node.openDataDir(); err != nil {
 		return nil, err
 	}
-	keyDir, isEphem, err := conf.GetKeyStoreDir()
-	if err != nil {
-		return nil, err
-	}
-	node.keyDir = keyDir
-	node.keyDirTemp = isEphem
-	// Creates an empty AccountManager with no backends. Callers (e.g. cmd/geth)
-	// are required to add the backends later on.
-	node.accman = accounts.NewManager(&accounts.Config{InsecureUnlockAllowed: conf.InsecureUnlockAllowed})
-
 	// Initialize the p2p server. This creates the node key and discovery databases.
 	node.server.Config.PrivateKey = node.config.NodeKey()
 	node.server.Config.Name = node.config.NodeName()
@@ -237,15 +220,6 @@ func (n *Node) doClose(errs []error) error {
 	n.state = closedState
 	errs = append(errs, n.closeDatabases()...)
 	n.lock.Unlock()
-
-	if err := n.accman.Close(); err != nil {
-		errs = append(errs, err)
-	}
-	if n.keyDirTemp {
-		if err := os.RemoveAll(n.keyDir); err != nil {
-			errs = append(errs, err)
-		}
-	}
 
 	// Release instance directory lock.
 	n.closeDataDir()
@@ -378,13 +352,6 @@ func (n *Node) startRPC() error {
 	// Filter out personal api
 	var apis []rpc.API
 	for _, api := range n.rpcAPIs {
-		if api.Namespace == "personal" {
-			if n.config.EnablePersonal {
-				log.Warn("Deprecated personal namespace activated")
-			} else {
-				continue
-			}
-		}
 		apis = append(apis, api)
 	}
 	if err := n.startInProc(apis); err != nil {
@@ -658,16 +625,6 @@ func (n *Node) DataDir() string {
 // InstanceDir retrieves the instance directory used by the protocol stack.
 func (n *Node) InstanceDir() string {
 	return n.config.instanceDir()
-}
-
-// KeyStoreDir retrieves the key directory
-func (n *Node) KeyStoreDir() string {
-	return n.keyDir
-}
-
-// AccountManager retrieves the account manager used by the protocol stack.
-func (n *Node) AccountManager() *accounts.Manager {
-	return n.accman
 }
 
 // IPCEndpoint retrieves the current IPC endpoint used by the protocol stack.

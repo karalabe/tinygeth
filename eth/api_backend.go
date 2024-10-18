@@ -24,7 +24,6 @@ import (
 
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/karalabe/tinygeth"
-	"github.com/karalabe/tinygeth/accounts"
 	"github.com/karalabe/tinygeth/consensus"
 	"github.com/karalabe/tinygeth/consensus/misc/eip4844"
 	"github.com/karalabe/tinygeth/core"
@@ -44,10 +43,8 @@ import (
 
 // EthAPIBackend implements ethapi.Backend and tracers.Backend for full nodes
 type EthAPIBackend struct {
-	extRPCEnabled       bool
-	allowUnprotectedTxs bool
-	eth                 *Ethereum
-	gpo                 *gasprice.Oracle
+	eth *Ethereum
+	gpo *gasprice.Oracle
 }
 
 // ChainConfig returns the active chain configuration.
@@ -375,18 +372,6 @@ func (b *EthAPIBackend) ChainDb() ethdb.Database {
 
 func (b *EthAPIBackend) EventMux() *event.TypeMux {
 	return b.eth.EventMux()
-}
-
-func (b *EthAPIBackend) AccountManager() *accounts.Manager {
-	return b.eth.AccountManager()
-}
-
-func (b *EthAPIBackend) ExtRPCEnabled() bool {
-	return b.extRPCEnabled
-}
-
-func (b *EthAPIBackend) UnprotectedAllowed() bool {
-	return b.allowUnprotectedTxs
 }
 
 func (b *EthAPIBackend) RPCGasCap() uint64 {
