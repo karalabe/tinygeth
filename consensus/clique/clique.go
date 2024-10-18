@@ -33,6 +33,7 @@ import (
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/ethereum/go-ethereum/rlp"
+	"github.com/ethereum/go-ethereum/rpc"
 	"github.com/karalabe/tinygeth/consensus"
 	"github.com/karalabe/tinygeth/consensus/misc"
 	"github.com/karalabe/tinygeth/consensus/misc/eip1559"
@@ -40,7 +41,6 @@ import (
 	"github.com/karalabe/tinygeth/core/types"
 	"github.com/karalabe/tinygeth/ethdb"
 	"github.com/karalabe/tinygeth/params"
-	"github.com/karalabe/tinygeth/rpc"
 	"github.com/karalabe/tinygeth/trie"
 	"golang.org/x/crypto/sha3"
 )

@@ -30,6 +30,7 @@ import (
 	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/ethereum/go-ethereum/metrics"
+	"github.com/ethereum/go-ethereum/rpc"
 	"github.com/karalabe/tinygeth/beacon/blsync"
 	"github.com/karalabe/tinygeth/cmd/utils"
 	"github.com/karalabe/tinygeth/eth/catalyst"
@@ -38,7 +39,6 @@ import (
 	"github.com/karalabe/tinygeth/internal/version"
 	"github.com/karalabe/tinygeth/node"
 	"github.com/karalabe/tinygeth/params"
-	"github.com/karalabe/tinygeth/rpc"
 	"github.com/naoina/toml"
 	"github.com/urfave/cli/v2"
 )

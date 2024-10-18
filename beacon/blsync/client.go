@@ -20,6 +20,7 @@ import (
 	"strings"
 
 	"github.com/ethereum/go-ethereum/common/mclock"
+	"github.com/ethereum/go-ethereum/rpc"
 	"github.com/karalabe/tinygeth/beacon/light"
 	"github.com/karalabe/tinygeth/beacon/light/api"
 	"github.com/karalabe/tinygeth/beacon/light/request"
@@ -28,7 +29,6 @@ import (
 	"github.com/karalabe/tinygeth/cmd/utils"
 	"github.com/karalabe/tinygeth/ethdb/memorydb"
 	"github.com/karalabe/tinygeth/event"
-	"github.com/karalabe/tinygeth/rpc"
 	"github.com/urfave/cli/v2"
 )
 

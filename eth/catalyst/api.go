@@ -28,6 +28,7 @@ import (
 	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/ethereum/go-ethereum/rlp"
+	"github.com/ethereum/go-ethereum/rpc"
 	"github.com/karalabe/tinygeth/beacon/engine"
 	"github.com/karalabe/tinygeth/core"
 	"github.com/karalabe/tinygeth/core/rawdb"
@@ -40,7 +41,6 @@ import (
 	"github.com/karalabe/tinygeth/node"
 	"github.com/karalabe/tinygeth/params"
 	"github.com/karalabe/tinygeth/params/forks"
-	"github.com/karalabe/tinygeth/rpc"
 )
 
 // Register adds the engine API to the full node.

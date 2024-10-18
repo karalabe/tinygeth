@@ -31,13 +31,13 @@ import (
 	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/ethereum/go-ethereum/common/math"
 	"github.com/ethereum/go-ethereum/rlp"
+	"github.com/ethereum/go-ethereum/rpc"
 	"github.com/karalabe/tinygeth"
 	"github.com/karalabe/tinygeth/consensus/misc/eip1559"
 	"github.com/karalabe/tinygeth/core/state"
 	"github.com/karalabe/tinygeth/core/types"
 	"github.com/karalabe/tinygeth/eth/filters"
 	"github.com/karalabe/tinygeth/internal/ethapi"
-	"github.com/karalabe/tinygeth/rpc"
 )
 
 var (

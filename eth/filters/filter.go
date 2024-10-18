@@ -23,9 +23,9 @@ import (
 	"slices"
 
 	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/rpc"
 	"github.com/karalabe/tinygeth/core/bloombits"
 	"github.com/karalabe/tinygeth/core/types"
-	"github.com/karalabe/tinygeth/rpc"
 )
 
 // Filter can be used to retrieve and filter logs.

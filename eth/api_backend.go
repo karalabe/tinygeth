@@ -23,6 +23,7 @@ import (
 	"time"
 
 	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/rpc"
 	"github.com/karalabe/tinygeth"
 	"github.com/karalabe/tinygeth/consensus"
 	"github.com/karalabe/tinygeth/consensus/misc/eip4844"
@@ -38,7 +39,6 @@ import (
 	"github.com/karalabe/tinygeth/ethdb"
 	"github.com/karalabe/tinygeth/event"
 	"github.com/karalabe/tinygeth/params"
-	"github.com/karalabe/tinygeth/rpc"
 )
 
 // EthAPIBackend implements ethapi.Backend and tracers.Backend for full nodes

@@ -28,6 +28,7 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/lru"
 	"github.com/ethereum/go-ethereum/log"
+	"github.com/ethereum/go-ethereum/rpc"
 	"github.com/karalabe/tinygeth"
 	"github.com/karalabe/tinygeth/core"
 	"github.com/karalabe/tinygeth/core/bloombits"
@@ -35,7 +36,6 @@ import (
 	"github.com/karalabe/tinygeth/ethdb"
 	"github.com/karalabe/tinygeth/event"
 	"github.com/karalabe/tinygeth/params"
-	"github.com/karalabe/tinygeth/rpc"
 )
 
 // Config represents the configuration of the filter system.

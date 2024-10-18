@@ -28,6 +28,7 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/crypto/kzg4844"
 	"github.com/ethereum/go-ethereum/log"
+	"github.com/ethereum/go-ethereum/rpc"
 	"github.com/karalabe/tinygeth/beacon/engine"
 	"github.com/karalabe/tinygeth/core/txpool"
 	"github.com/karalabe/tinygeth/core/types"
@@ -35,7 +36,6 @@ import (
 	"github.com/karalabe/tinygeth/event"
 	"github.com/karalabe/tinygeth/node"
 	"github.com/karalabe/tinygeth/params"
-	"github.com/karalabe/tinygeth/rpc"
 )
 
 const devEpochLength = 32

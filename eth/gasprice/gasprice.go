@@ -25,12 +25,12 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/lru"
 	"github.com/ethereum/go-ethereum/log"
+	"github.com/ethereum/go-ethereum/rpc"
 	"github.com/karalabe/tinygeth/core"
 	"github.com/karalabe/tinygeth/core/state"
 	"github.com/karalabe/tinygeth/core/types"
 	"github.com/karalabe/tinygeth/event"
 	"github.com/karalabe/tinygeth/params"
-	"github.com/karalabe/tinygeth/rpc"
 )
 
 const sampleNumber = 3 // Number of transactions sampled in a block

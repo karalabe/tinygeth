@@ -26,6 +26,7 @@ import (
 
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
+	"github.com/ethereum/go-ethereum/rpc"
 	"github.com/karalabe/tinygeth"
 	"github.com/karalabe/tinygeth/consensus"
 	"github.com/karalabe/tinygeth/core"
@@ -36,7 +37,6 @@ import (
 	"github.com/karalabe/tinygeth/ethdb"
 	"github.com/karalabe/tinygeth/event"
 	"github.com/karalabe/tinygeth/params"
-	"github.com/karalabe/tinygeth/rpc"
 )
 
 // TestSetFeeDefaults tests the logic for filling in default fee values works as expected.

@@ -24,12 +24,12 @@ import (
 	"sync"
 	"time"
 
+	"github.com/ethereum/go-ethereum/rpc"
 	"github.com/graph-gophers/graphql-go"
 	gqlErrors "github.com/graph-gophers/graphql-go/errors"
 	"github.com/karalabe/tinygeth/eth/filters"
 	"github.com/karalabe/tinygeth/internal/ethapi"
 	"github.com/karalabe/tinygeth/node"
-	"github.com/karalabe/tinygeth/rpc"
 )
 
 type handler struct {

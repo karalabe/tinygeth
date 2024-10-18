@@ -21,10 +21,10 @@ import (
 	"sync"
 	"time"
 
+	"github.com/ethereum/go-ethereum/rpc"
 	"github.com/karalabe/tinygeth"
 	"github.com/karalabe/tinygeth/core"
 	"github.com/karalabe/tinygeth/event"
-	"github.com/karalabe/tinygeth/rpc"
 )
 
 // DownloaderAPI provides an API which gives information about the current

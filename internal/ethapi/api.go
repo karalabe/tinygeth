@@ -34,6 +34,7 @@ import (
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/ethereum/go-ethereum/p2p"
 	"github.com/ethereum/go-ethereum/rlp"
+	"github.com/ethereum/go-ethereum/rpc"
 	"github.com/holiman/uint256"
 	"github.com/karalabe/tinygeth/consensus"
 	"github.com/karalabe/tinygeth/consensus/misc/eip1559"
@@ -45,7 +46,6 @@ import (
 	"github.com/karalabe/tinygeth/eth/gasestimator"
 	"github.com/karalabe/tinygeth/eth/tracers/logger"
 	"github.com/karalabe/tinygeth/params"
-	"github.com/karalabe/tinygeth/rpc"
 	"github.com/karalabe/tinygeth/trie"
 )
 

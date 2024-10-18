@@ -31,11 +31,11 @@ import (
 
 	"github.com/dop251/goja"
 	"github.com/ethereum/go-ethereum/log"
+	"github.com/ethereum/go-ethereum/rpc"
 	"github.com/karalabe/tinygeth/console/prompt"
 	"github.com/karalabe/tinygeth/internal/jsre"
 	"github.com/karalabe/tinygeth/internal/jsre/deps"
 	"github.com/karalabe/tinygeth/internal/web3ext"
-	"github.com/karalabe/tinygeth/rpc"
 	"github.com/mattn/go-colorable"
 	"github.com/peterh/liner"
 )

@@ -34,6 +34,7 @@ import (
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/crypto/kzg4844"
 	"github.com/ethereum/go-ethereum/p2p"
+	"github.com/ethereum/go-ethereum/rpc"
 	"github.com/karalabe/tinygeth/beacon/engine"
 	"github.com/karalabe/tinygeth/consensus"
 	beaconConsensus "github.com/karalabe/tinygeth/consensus/beacon"
@@ -46,7 +47,6 @@ import (
 	"github.com/karalabe/tinygeth/miner"
 	"github.com/karalabe/tinygeth/node"
 	"github.com/karalabe/tinygeth/params"
-	"github.com/karalabe/tinygeth/rpc"
 	"github.com/karalabe/tinygeth/trie"
 )
 

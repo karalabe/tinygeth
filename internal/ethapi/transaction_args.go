@@ -29,12 +29,12 @@ import (
 	"github.com/ethereum/go-ethereum/common/math"
 	"github.com/ethereum/go-ethereum/crypto/kzg4844"
 	"github.com/ethereum/go-ethereum/log"
+	"github.com/ethereum/go-ethereum/rpc"
 	"github.com/holiman/uint256"
 	"github.com/karalabe/tinygeth/consensus/misc/eip4844"
 	"github.com/karalabe/tinygeth/core"
 	"github.com/karalabe/tinygeth/core/types"
 	"github.com/karalabe/tinygeth/params"
-	"github.com/karalabe/tinygeth/rpc"
 )
 
 var (

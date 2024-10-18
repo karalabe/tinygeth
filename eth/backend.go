@@ -31,6 +31,7 @@ import (
 	"github.com/ethereum/go-ethereum/p2p/dnsdisc"
 	"github.com/ethereum/go-ethereum/p2p/enode"
 	"github.com/ethereum/go-ethereum/rlp"
+	"github.com/ethereum/go-ethereum/rpc"
 	"github.com/karalabe/tinygeth/consensus"
 	"github.com/karalabe/tinygeth/core"
 	"github.com/karalabe/tinygeth/core/bloombits"
@@ -54,7 +55,6 @@ import (
 	"github.com/karalabe/tinygeth/miner"
 	"github.com/karalabe/tinygeth/node"
 	"github.com/karalabe/tinygeth/params"
-	"github.com/karalabe/tinygeth/rpc"
 )
 
 // Config contains the configuration options of the ETH protocol.

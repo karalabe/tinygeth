@@ -27,6 +27,7 @@ import (
 	"time"
 
 	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/rpc"
 	"github.com/karalabe/tinygeth/consensus/ethash"
 	"github.com/karalabe/tinygeth/core"
 	"github.com/karalabe/tinygeth/core/bloombits"
@@ -36,7 +37,6 @@ import (
 	"github.com/karalabe/tinygeth/event"
 	"github.com/karalabe/tinygeth/internal/ethapi"
 	"github.com/karalabe/tinygeth/params"
-	"github.com/karalabe/tinygeth/rpc"
 )
 
 type testBackend struct {

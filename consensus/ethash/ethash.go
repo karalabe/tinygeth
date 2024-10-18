@@ -20,9 +20,9 @@ package ethash
 import (
 	"time"
 
+	"github.com/ethereum/go-ethereum/rpc"
 	"github.com/karalabe/tinygeth/consensus"
 	"github.com/karalabe/tinygeth/core/types"
-	"github.com/karalabe/tinygeth/rpc"
 )
 
 // Ethash is a consensus engine based on proof-of-work implementing the ethash

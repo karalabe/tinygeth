@@ -27,9 +27,9 @@ import (
 
 	"github.com/dop251/goja"
 	"github.com/ethereum/go-ethereum/common/hexutil"
+	"github.com/ethereum/go-ethereum/rpc"
 	"github.com/karalabe/tinygeth/console/prompt"
 	"github.com/karalabe/tinygeth/internal/jsre"
-	"github.com/karalabe/tinygeth/rpc"
 )
 
 // bridge is a collection of JavaScript utility methods to bride the .js runtime

@@ -23,9 +23,9 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/ethereum/go-ethereum/rlp"
+	"github.com/ethereum/go-ethereum/rpc"
 	"github.com/karalabe/tinygeth/consensus"
 	"github.com/karalabe/tinygeth/core/types"
-	"github.com/karalabe/tinygeth/rpc"
 )
 
 // API is a user facing RPC API to allow controlling the signer and voting

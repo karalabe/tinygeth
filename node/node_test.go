@@ -29,8 +29,8 @@ import (
 
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/p2p"
+	"github.com/ethereum/go-ethereum/rpc"
 	"github.com/karalabe/tinygeth/ethdb"
-	"github.com/karalabe/tinygeth/rpc"
 
 	"github.com/stretchr/testify/assert"
 )

@@ -38,6 +38,7 @@ import (
 	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/crypto/kzg4844"
+	"github.com/ethereum/go-ethereum/rpc"
 	"github.com/holiman/uint256"
 	"github.com/karalabe/tinygeth"
 	"github.com/karalabe/tinygeth/consensus"
@@ -53,7 +54,6 @@ import (
 	"github.com/karalabe/tinygeth/event"
 	"github.com/karalabe/tinygeth/internal/blocktest"
 	"github.com/karalabe/tinygeth/params"
-	"github.com/karalabe/tinygeth/rpc"
 	"github.com/karalabe/tinygeth/triedb"
 	"github.com/stretchr/testify/require"
 )
