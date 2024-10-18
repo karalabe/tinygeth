@@ -48,7 +48,9 @@ import (
 )
 
 const (
-	clientIdentifier = "geth" // Client identifier to advertise over the network
+	clientIdentifier      = "tinygeth" // Client identifier to advertise over the network
+	clientIdentifierCLI   = "TinyGeth" // Client identifier to use in CLI outputs
+	clientIdentifierVulns = "Geth"     // Client identifier to use for vulnerability checks
 )
 
 var (

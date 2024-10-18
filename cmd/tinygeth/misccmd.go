@@ -20,7 +20,6 @@ import (
 	"fmt"
 	"os"
 	"runtime"
-	"strings"
 
 	"github.com/karalabe/tinygeth/internal/version"
 	"github.com/karalabe/tinygeth/params"
@@ -36,7 +35,7 @@ var (
 	VersionCheckVersionFlag = &cli.StringFlag{
 		Name:  "check.version",
 		Usage: "Version to check",
-		Value: version.ClientName(clientIdentifier),
+		Value: version.ClientName(clientIdentifierVulns),
 	}
 	versionCommand = &cli.Command{
 		Action:    printVersion,
@@ -72,7 +71,7 @@ and displays information about any security vulnerabilities that affect the curr
 func printVersion(ctx *cli.Context) error {
 	git, _ := version.VCS()
 
-	fmt.Println(strings.Title(clientIdentifier))
+	fmt.Println(clientIdentifierCLI)
 	fmt.Println("Version:", params.VersionWithMeta)
 	if git.Commit != "" {
 		fmt.Println("Git Commit:", git.Commit)

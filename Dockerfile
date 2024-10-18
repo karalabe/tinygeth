@@ -9,21 +9,21 @@ FROM golang:1.23-alpine AS builder
 RUN apk add --no-cache gcc musl-dev linux-headers git
 
 # Get dependencies - will also be cached if we won't change go.mod/go.sum
-COPY go.mod /go-ethereum/
-COPY go.sum /go-ethereum/
-RUN cd /go-ethereum && go mod download
+COPY go.mod /tinygeth/
+COPY go.sum /tinygeth/
+RUN cd /tinygeth && go mod download
 
-ADD . /go-ethereum
-RUN cd /go-ethereum && go run build/ci.go install -static ./cmd/geth
+ADD . /tinygeth
+RUN cd /tinygeth && go run build/ci.go install -static ./cmd/tinygeth
 
 # Pull Geth into a second stage deploy alpine container
 FROM alpine:latest
 
 RUN apk add --no-cache ca-certificates
-COPY --from=builder /go-ethereum/build/bin/geth /usr/local/bin/
+COPY --from=builder /tinygeth/build/bin/tinygeth /usr/local/bin/
 
 EXPOSE 8545 8546 30303 30303/udp
-ENTRYPOINT ["geth"]
+ENTRYPOINT ["tinygeth"]
 
 # Add some metadata labels to help programmatic image consumption
 ARG COMMIT=""
