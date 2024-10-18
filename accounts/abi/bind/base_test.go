@@ -26,12 +26,12 @@ import (
 
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
+	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/karalabe/tinygeth"
 	"github.com/karalabe/tinygeth/accounts/abi"
 	"github.com/karalabe/tinygeth/accounts/abi/bind"
 	"github.com/karalabe/tinygeth/core/types"
-	"github.com/karalabe/tinygeth/crypto"
 	"github.com/stretchr/testify/assert"
 )
 

@@ -24,12 +24,12 @@ import (
 
 	"github.com/davecgh/go-spew/spew"
 	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/karalabe/tinygeth/consensus/beacon"
 	"github.com/karalabe/tinygeth/consensus/ethash"
 	"github.com/karalabe/tinygeth/core/rawdb"
 	"github.com/karalabe/tinygeth/core/types"
 	"github.com/karalabe/tinygeth/core/vm"
-	"github.com/karalabe/tinygeth/crypto"
 	"github.com/karalabe/tinygeth/params"
 	"github.com/karalabe/tinygeth/triedb"
 )

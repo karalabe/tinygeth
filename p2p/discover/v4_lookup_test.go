@@ -24,7 +24,7 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/karalabe/tinygeth/crypto"
+	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/karalabe/tinygeth/p2p/discover/v4wire"
 	"github.com/karalabe/tinygeth/p2p/enode"
 	"github.com/karalabe/tinygeth/p2p/enr"

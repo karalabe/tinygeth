@@ -26,8 +26,8 @@ import (
 	"testing"
 
 	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/karalabe/tinygeth/core/rawdb"
-	"github.com/karalabe/tinygeth/crypto"
 	"github.com/karalabe/tinygeth/ethdb/memorydb"
 )
 

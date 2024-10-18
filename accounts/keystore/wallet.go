@@ -19,10 +19,10 @@ package keystore
 import (
 	"math/big"
 
+	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/karalabe/tinygeth"
 	"github.com/karalabe/tinygeth/accounts"
 	"github.com/karalabe/tinygeth/core/types"
-	"github.com/karalabe/tinygeth/crypto"
 )
 
 // keystoreWallet implements the accounts.Wallet interface for the original

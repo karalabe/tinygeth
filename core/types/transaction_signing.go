@@ -23,7 +23,7 @@ import (
 	"math/big"
 
 	"github.com/ethereum/go-ethereum/common"
-	"github.com/karalabe/tinygeth/crypto"
+	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/karalabe/tinygeth/params"
 )
 

@@ -28,6 +28,7 @@ import (
 	"time"
 
 	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/holiman/uint256"
 	"github.com/karalabe/tinygeth/core/rawdb"
@@ -35,7 +36,6 @@ import (
 	"github.com/karalabe/tinygeth/core/stateless"
 	"github.com/karalabe/tinygeth/core/tracing"
 	"github.com/karalabe/tinygeth/core/types"
-	"github.com/karalabe/tinygeth/crypto"
 	"github.com/karalabe/tinygeth/params"
 	"github.com/karalabe/tinygeth/trie"
 	"github.com/karalabe/tinygeth/trie/trienode"

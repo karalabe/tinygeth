@@ -27,7 +27,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/karalabe/tinygeth/crypto"
+	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/karalabe/tinygeth/ethdb"
 	"github.com/karalabe/tinygeth/p2p"
 	"github.com/karalabe/tinygeth/rpc"

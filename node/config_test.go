@@ -23,7 +23,7 @@ import (
 	"runtime"
 	"testing"
 
-	"github.com/karalabe/tinygeth/crypto"
+	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/karalabe/tinygeth/p2p"
 )
 

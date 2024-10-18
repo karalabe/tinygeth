@@ -290,7 +290,7 @@ var bindTests = []struct {
 			"github.com/karalabe/tinygeth/accounts/abi/bind"
 			"github.com/karalabe/tinygeth/accounts/abi/bind/backends"
 			"github.com/karalabe/tinygeth/core/types"
-			"github.com/karalabe/tinygeth/crypto"
+			"github.com/ethereum/go-ethereum/crypto"
 		`,
 		`
 			// Generate a new random account and a funded simulator
@@ -346,7 +346,7 @@ var bindTests = []struct {
 			"github.com/karalabe/tinygeth/accounts/abi/bind"
 			"github.com/karalabe/tinygeth/accounts/abi/bind/backends"
 			"github.com/karalabe/tinygeth/core/types"
-			"github.com/karalabe/tinygeth/crypto"
+			"github.com/ethereum/go-ethereum/crypto"
 		`,
 		`
 			// Generate a new random account and a funded simulator
@@ -392,7 +392,7 @@ var bindTests = []struct {
 			"github.com/karalabe/tinygeth/accounts/abi/bind"
 			"github.com/karalabe/tinygeth/accounts/abi/bind/backends"
 			"github.com/karalabe/tinygeth/core/types"
-			"github.com/karalabe/tinygeth/crypto"
+			"github.com/ethereum/go-ethereum/crypto"
 		`,
 		`
 			// Generate a new random account and a funded simulator
@@ -450,7 +450,7 @@ var bindTests = []struct {
 			"github.com/karalabe/tinygeth/accounts/abi/bind/backends"
 			"github.com/ethereum/go-ethereum/common"
 			"github.com/karalabe/tinygeth/core/types"
-			"github.com/karalabe/tinygeth/crypto"
+			"github.com/ethereum/go-ethereum/crypto"
 		`,
 		`
 			// Generate a new random account and a funded simulator
@@ -498,7 +498,7 @@ var bindTests = []struct {
 			"github.com/karalabe/tinygeth/accounts/abi/bind"
 			"github.com/karalabe/tinygeth/accounts/abi/bind/backends"
 			"github.com/karalabe/tinygeth/core/types"
-			"github.com/karalabe/tinygeth/crypto"
+			"github.com/ethereum/go-ethereum/crypto"
 		`,
 		`
 			// Generate a new random account and a funded simulator
@@ -565,7 +565,7 @@ var bindTests = []struct {
 			"github.com/karalabe/tinygeth/accounts/abi/bind"
 			"github.com/karalabe/tinygeth/accounts/abi/bind/backends"
 			"github.com/karalabe/tinygeth/core/types"
-			"github.com/karalabe/tinygeth/crypto"
+			"github.com/ethereum/go-ethereum/crypto"
 		`,
 		`
 			// Generate a new random account and a funded simulator
@@ -697,7 +697,7 @@ var bindTests = []struct {
 			"github.com/karalabe/tinygeth/accounts/abi/bind"
 			"github.com/karalabe/tinygeth/accounts/abi/bind/backends"
 			"github.com/karalabe/tinygeth/core/types"
-			"github.com/karalabe/tinygeth/crypto"
+			"github.com/ethereum/go-ethereum/crypto"
 		`,
 		`
 			// Generate a new random account and a funded simulator
@@ -747,7 +747,7 @@ var bindTests = []struct {
 			"github.com/karalabe/tinygeth/accounts/abi/bind/backends"
 			"github.com/ethereum/go-ethereum/common"
 			"github.com/karalabe/tinygeth/core/types"
-			"github.com/karalabe/tinygeth/crypto"
+			"github.com/ethereum/go-ethereum/crypto"
 		`,
 		`
 			// Generate a new random account and a funded simulator
@@ -822,7 +822,7 @@ var bindTests = []struct {
 			"github.com/karalabe/tinygeth/accounts/abi/bind"
 			"github.com/karalabe/tinygeth/accounts/abi/bind/backends"
 			"github.com/karalabe/tinygeth/core/types"
-			"github.com/karalabe/tinygeth/crypto"
+			"github.com/ethereum/go-ethereum/crypto"
 		`,
 		`
 			// Generate a new random account and a funded simulator
@@ -916,7 +916,7 @@ var bindTests = []struct {
 			"github.com/karalabe/tinygeth/accounts/abi/bind/backends"
 			"github.com/ethereum/go-ethereum/common"
 			"github.com/karalabe/tinygeth/core/types"
-			"github.com/karalabe/tinygeth/crypto"
+			"github.com/ethereum/go-ethereum/crypto"
 		`,
 		`
 			// Generate a new random account and a funded simulator
@@ -1106,7 +1106,7 @@ var bindTests = []struct {
 			"github.com/karalabe/tinygeth/accounts/abi/bind"
 			"github.com/karalabe/tinygeth/accounts/abi/bind/backends"
 			"github.com/karalabe/tinygeth/core/types"
-			"github.com/karalabe/tinygeth/crypto"
+			"github.com/ethereum/go-ethereum/crypto"
 		`,
 		`
 			// Generate a new random account and a funded simulator
@@ -1241,7 +1241,7 @@ var bindTests = []struct {
 			"github.com/karalabe/tinygeth/accounts/abi/bind"
 			"github.com/karalabe/tinygeth/accounts/abi/bind/backends"
 			"github.com/karalabe/tinygeth/core/types"
-			"github.com/karalabe/tinygeth/crypto"
+			"github.com/ethereum/go-ethereum/crypto"
 		`,
 
 		`
@@ -1383,7 +1383,7 @@ var bindTests = []struct {
 			"github.com/karalabe/tinygeth/accounts/abi/bind"
 			"github.com/karalabe/tinygeth/accounts/abi/bind/backends"
 			"github.com/karalabe/tinygeth/core/types"
-			"github.com/karalabe/tinygeth/crypto"
+			"github.com/ethereum/go-ethereum/crypto"
 		`,
 		`
 			// Generate a new random account and a funded simulator
@@ -1449,7 +1449,7 @@ var bindTests = []struct {
 		"github.com/karalabe/tinygeth/accounts/abi/bind"
 		"github.com/karalabe/tinygeth/accounts/abi/bind/backends"
 		"github.com/karalabe/tinygeth/core/types"
-		"github.com/karalabe/tinygeth/crypto"
+		"github.com/ethereum/go-ethereum/crypto"
 		`,
 		`
 		// Initialize test accounts
@@ -1536,7 +1536,7 @@ var bindTests = []struct {
 
 		"github.com/karalabe/tinygeth/accounts/abi/bind"
 		"github.com/karalabe/tinygeth/accounts/abi/bind/backends"
-		"github.com/karalabe/tinygeth/crypto"
+		"github.com/ethereum/go-ethereum/crypto"
 		"github.com/karalabe/tinygeth/core/types"
 		`,
 		`
@@ -1599,7 +1599,7 @@ var bindTests = []struct {
 
 		"github.com/karalabe/tinygeth/accounts/abi/bind"
 		"github.com/karalabe/tinygeth/accounts/abi/bind/backends"
-		"github.com/karalabe/tinygeth/crypto"
+		"github.com/ethereum/go-ethereum/crypto"
 		"github.com/karalabe/tinygeth/core/types"
         `,
 		`
@@ -1662,7 +1662,7 @@ var bindTests = []struct {
 			"github.com/karalabe/tinygeth/accounts/abi/bind"
 			"github.com/karalabe/tinygeth/accounts/abi/bind/backends"
 			"github.com/karalabe/tinygeth/core/types"
-			"github.com/karalabe/tinygeth/crypto"
+			"github.com/ethereum/go-ethereum/crypto"
 		`,
 		`
 			// Generate a new random account and a funded simulator
@@ -1723,7 +1723,7 @@ var bindTests = []struct {
 			"github.com/karalabe/tinygeth/accounts/abi/bind"
 			"github.com/karalabe/tinygeth/accounts/abi/bind/backends"
 			"github.com/karalabe/tinygeth/core/types"
-			"github.com/karalabe/tinygeth/crypto"
+			"github.com/ethereum/go-ethereum/crypto"
 	   `,
 		`
 			key, _ := crypto.GenerateKey()
@@ -1811,7 +1811,7 @@ var bindTests = []struct {
 			"github.com/karalabe/tinygeth/accounts/abi/bind"
 			"github.com/karalabe/tinygeth/accounts/abi/bind/backends"
 			"github.com/karalabe/tinygeth/core/types"
-			"github.com/karalabe/tinygeth/crypto"
+			"github.com/ethereum/go-ethereum/crypto"
 			"github.com/karalabe/tinygeth/eth/ethconfig"
 	   `,
 		`
@@ -1882,7 +1882,7 @@ var bindTests = []struct {
 			"github.com/karalabe/tinygeth/accounts/abi/bind"
 			"github.com/karalabe/tinygeth/accounts/abi/bind/backends"
 			"github.com/karalabe/tinygeth/core/types"
-			"github.com/karalabe/tinygeth/crypto"
+			"github.com/ethereum/go-ethereum/crypto"
 			"github.com/karalabe/tinygeth/eth/ethconfig"
 	   `,
 		`
@@ -1935,7 +1935,7 @@ var bindTests = []struct {
 			"github.com/karalabe/tinygeth/accounts/abi/bind"
 			"github.com/karalabe/tinygeth/accounts/abi/bind/backends"
 			"github.com/karalabe/tinygeth/core/types"
-			"github.com/karalabe/tinygeth/crypto"
+			"github.com/ethereum/go-ethereum/crypto"
 			"github.com/karalabe/tinygeth/eth/ethconfig"
 		`,
 		tester: `
@@ -1984,7 +1984,7 @@ var bindTests = []struct {
 			"github.com/karalabe/tinygeth/accounts/abi/bind"
 			"github.com/karalabe/tinygeth/accounts/abi/bind/backends"
 			"github.com/karalabe/tinygeth/core/types"
-			"github.com/karalabe/tinygeth/crypto"
+			"github.com/ethereum/go-ethereum/crypto"
 			"github.com/karalabe/tinygeth/eth/ethconfig"
 		`,
 		tester: `
@@ -2025,7 +2025,7 @@ var bindTests = []struct {
 			"github.com/karalabe/tinygeth/accounts/abi/bind"
 			"github.com/karalabe/tinygeth/accounts/abi/bind/backends"
 			"github.com/karalabe/tinygeth/core/types"
-			"github.com/karalabe/tinygeth/crypto"
+			"github.com/ethereum/go-ethereum/crypto"
 			"github.com/karalabe/tinygeth/eth/ethconfig"
 		`,
 		tester: `

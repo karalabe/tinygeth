@@ -23,8 +23,8 @@ import (
 	"sync"
 
 	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/rlp"
-	"github.com/karalabe/tinygeth/crypto"
 	"golang.org/x/crypto/sha3"
 )
 

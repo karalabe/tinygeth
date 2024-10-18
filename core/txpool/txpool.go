@@ -23,11 +23,11 @@ import (
 	"sync"
 
 	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/crypto/kzg4844"
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/ethereum/go-ethereum/metrics"
 	"github.com/karalabe/tinygeth/core"
 	"github.com/karalabe/tinygeth/core/types"
-	"github.com/karalabe/tinygeth/crypto/kzg4844"
 	"github.com/karalabe/tinygeth/event"
 )
 

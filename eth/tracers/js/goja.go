@@ -33,8 +33,8 @@ import (
 
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
+	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/karalabe/tinygeth/core/vm"
-	"github.com/karalabe/tinygeth/crypto"
 	jsassets "github.com/karalabe/tinygeth/eth/tracers/js/internal/tracers"
 )
 

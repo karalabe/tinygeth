@@ -24,11 +24,11 @@ import (
 	"math/big"
 
 	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/karalabe/tinygeth/accounts"
 	"github.com/karalabe/tinygeth/accounts/keystore"
 	"github.com/karalabe/tinygeth/core/types"
-	"github.com/karalabe/tinygeth/crypto"
 )
 
 // ErrNoChainID is returned whenever the user failed to specify a chain id.

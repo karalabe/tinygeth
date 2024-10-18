@@ -27,12 +27,12 @@ import (
 
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
+	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/karalabe/tinygeth/core"
 	"github.com/karalabe/tinygeth/core/rawdb"
 	"github.com/karalabe/tinygeth/core/types"
 	"github.com/karalabe/tinygeth/core/vm"
-	"github.com/karalabe/tinygeth/crypto"
 	"github.com/karalabe/tinygeth/eth/tracers"
 	"github.com/karalabe/tinygeth/params"
 	"github.com/karalabe/tinygeth/tests"

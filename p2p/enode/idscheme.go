@@ -22,8 +22,8 @@ import (
 	"io"
 
 	"github.com/ethereum/go-ethereum/common/math"
+	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/rlp"
-	"github.com/karalabe/tinygeth/crypto"
 	"github.com/karalabe/tinygeth/p2p/enr"
 	"golang.org/x/crypto/sha3"
 )

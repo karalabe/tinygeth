@@ -37,6 +37,8 @@ import (
 
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/fdlimit"
+	"github.com/ethereum/go-ethereum/crypto"
+	"github.com/ethereum/go-ethereum/crypto/kzg4844"
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/ethereum/go-ethereum/metrics"
 	"github.com/ethereum/go-ethereum/metrics/exp"
@@ -50,8 +52,6 @@ import (
 	"github.com/karalabe/tinygeth/core/txpool/blobpool"
 	"github.com/karalabe/tinygeth/core/txpool/legacypool"
 	"github.com/karalabe/tinygeth/core/vm"
-	"github.com/karalabe/tinygeth/crypto"
-	"github.com/karalabe/tinygeth/crypto/kzg4844"
 	"github.com/karalabe/tinygeth/eth"
 	"github.com/karalabe/tinygeth/eth/catalyst"
 	"github.com/karalabe/tinygeth/eth/downloader"

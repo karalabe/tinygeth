@@ -20,8 +20,8 @@ import (
 	"testing"
 
 	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/karalabe/tinygeth/core/rawdb"
-	"github.com/karalabe/tinygeth/crypto"
 )
 
 // Tests that the node iterator indeed walks over the entire database contents.
