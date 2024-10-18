@@ -1,0 +1,5 @@
+panic: missing data on nil error: nodes == <nil>, subtri == <nil>
+github.com/karalabe/tinygeth/tests/fuzzers/rangeproof.(*fuzzer).fuzz
+github.com/karalabe/tinygeth/tests/fuzzers/rangeproof.Fuzz
+go-fuzz-dep.Main
+main.main

@@ -11,6 +11,10 @@ Tiny Geth is Peter's personal, opinionated "fork" of go-ethereum. It's not a com
 
 Tracking authorship information through git commits from upstream is not possible due to the different code and dependency structure and changes to fundamental types. I'll try to explicitly highlight commits that are merging upstream code downstream into this repo to try and explicitly highlight its origins.
 
+Upstream code sync history:
+
+- 2024.10.18: [v1.14.12-unstable-f32f868](https://github.com/ethereum/go-ethereum/tree/f32f8686cd35343b8f888e5607518314770f4661)
+
 ## License
 
 This project reuses probably 99.999% code from [go-ethereum](https://github.com/ethereum/go-ethereum), some as a dependency, some verbatim. The license is the same as upstream:

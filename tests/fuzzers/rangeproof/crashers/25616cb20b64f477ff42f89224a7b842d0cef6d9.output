@@ -1,0 +1,12 @@
+panic: missing data on nil error: nodes == <nil>, subtri == <nil>
+
+goroutine 1 [running]:
+github.com/karalabe/tinygeth/tests/fuzzers/rangeproof.(*fuzzer).fuzz(0xc00008de80, 0xc000110c90)
+	/work/src/github.com/karalabe/tinygeth/tests/fuzzers/rangeproof/rangeproof-fuzzer.go:170 +0x15f8
+github.com/karalabe/tinygeth/tests/fuzzers/rangeproof.Fuzz(0x7fed873c7000, 0x64, 0x64, 0x4)
+	/work/src/github.com/karalabe/tinygeth/tests/fuzzers/rangeproof/rangeproof-fuzzer.go:191 +0x10e
+go-fuzz-dep.Main(0xc00008df70, 0x1, 0x1)
+	go-fuzz-dep/main.go:36 +0x1b8
+main.main()
+	github.com/karalabe/tinygeth/tests/fuzzers/rangeproof/go.fuzz.main/main.go:15 +0x52
+exit status 2

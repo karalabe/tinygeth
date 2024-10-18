@@ -1,0 +1,12 @@
+panic: runtime error: integer divide by zero
+
+goroutine 1 [running]:
+github.com/karalabe/tinygeth/tests/fuzzers/rangeproof.(*fuzzer).fuzz(0xc000093e80, 0xc00006cc00)
+	/work/src/github.com/karalabe/tinygeth/tests/fuzzers/rangeproof/rangeproof-fuzzer.go:107 +0x1790
+github.com/karalabe/tinygeth/tests/fuzzers/rangeproof.Fuzz(0x7fb80715e000, 0x64, 0x64, 0x4)
+	/work/src/github.com/karalabe/tinygeth/tests/fuzzers/rangeproof/rangeproof-fuzzer.go:191 +0x10e
+go-fuzz-dep.Main(0xc000093f70, 0x1, 0x1)
+	go-fuzz-dep/main.go:36 +0x1b8
+main.main()
+	github.com/karalabe/tinygeth/tests/fuzzers/rangeproof/go.fuzz.main/main.go:15 +0x52
+exit status 2
