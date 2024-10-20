@@ -9,6 +9,18 @@ Tiny Geth is Peter's personal, opinionated "fork" of go-ethereum. It's not a com
 - ***This is a personal project. I take no responsibility for anyone using it and incurring arbitrary losses.***
 - ***Unless promised personally, there is no API guarantee anywhere in this project, not even on the RPCs.***
 
+## Binaries
+
+Tiny Geth is only pre-built as a multi-arch docker image for `amd64` and `arm64` in [`tinygeth/tinygeth`](https://hub.docker.com/r/tinygeth/tinygeth).
+
+For anything else, you can build with Go:
+
+```sh
+go install ./cmd/tinygeth
+```
+
+There are no plans to distribute to any other platforms.
+
 ## Changelog
 
 These are the approximate changes compared upstream:
@@ -18,7 +30,7 @@ These are the approximate changes compared upstream:
 - Tiny Geth does not support account management.
   - Ethereum nodes should not concern themselves with being wallets. Whilst having a wallet implementation in Go is useful (please use go-ethereum as a library), having a keystore inside a running node is not.
 
-## Commit history
+## Authorship
 
 Tracking authorship information through git commits from upstream is not possible due to the different code and dependency structure and changes to fundamental types. I'll try to explicitly highlight commits that are merging upstream code downstream into this repo to try and explicitly highlight its origins.
 
