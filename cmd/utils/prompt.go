@@ -20,7 +20,7 @@ package utils
 import (
 	"fmt"
 
-	"github.com/karalabe/tinygeth/console/prompt"
+	"github.com/karalabe/tinygeth/console-legacy/prompt"
 )
 
 // GetPassPhrase displays the given text(prompt) to the user and requests some textual

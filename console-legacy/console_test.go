@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the go-ethereum library. If not, see <http://www.gnu.org/licenses/>.
 
-package console
+package console_legacy
 
 import (
 	"bytes"
@@ -26,7 +26,7 @@ import (
 	"time"
 
 	"github.com/ethereum/go-ethereum/common"
-	"github.com/karalabe/tinygeth/console/prompt"
+	"github.com/karalabe/tinygeth/console-legacy/prompt"
 	"github.com/karalabe/tinygeth/core"
 	"github.com/karalabe/tinygeth/eth"
 	"github.com/karalabe/tinygeth/eth/ethconfig"

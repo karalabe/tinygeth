@@ -18,10 +18,10 @@ package main
 
 import (
 	"fmt"
-	"strings"
 
 	"github.com/karalabe/tinygeth/cmd/utils"
 	"github.com/karalabe/tinygeth/console"
+	console_legacy "github.com/karalabe/tinygeth/console-legacy"
 	"github.com/karalabe/tinygeth/internal/flags"
 	"github.com/urfave/cli/v2"
 )
@@ -52,17 +52,6 @@ which exposes a node admin interface as well as the Ðapp JavaScript API.
 See https://geth.ethereum.org/docs/interacting-with-geth/javascript-console.
 This command allows to open a console on a running geth node.`,
 	}
-
-	javascriptCommand = &cli.Command{
-		Action:    ephemeralConsole,
-		Name:      "js",
-		Usage:     "(DEPRECATED) Execute the specified JavaScript files",
-		ArgsUsage: "<jsfile> [jsfile...]",
-		Flags:     flags.Merge(nodeFlags, consoleFlags),
-		Description: `
-The JavaScript VM exposes a node admin interface as well as the Ðapp
-JavaScript API. See https://geth.ethereum.org/docs/interacting-with-geth/javascript-console`,
-	}
 )
 
 // localConsole starts a new geth node, attaching a JavaScript console to it at the
@@ -76,13 +65,13 @@ func localConsole(ctx *cli.Context) error {
 
 	// Attach to the newly started node and create the JavaScript console.
 	client := stack.Attach()
-	config := console.Config{
+	config := console_legacy.Config{
 		DataDir: utils.MakeDataDir(ctx),
 		DocRoot: ctx.String(utils.JSpathFlag.Name),
 		Client:  client,
 		Preload: utils.MakeConsolePreloads(ctx),
 	}
-	console, err := console.New(config)
+	console, err := console_legacy.New(config)
 	if err != nil {
 		return fmt.Errorf("failed to start the JavaScript console: %v", err)
 	}
@@ -110,6 +99,8 @@ func localConsole(ctx *cli.Context) error {
 // remoteConsole will connect to a remote geth instance, attaching a JavaScript
 // console to it.
 func remoteConsole(ctx *cli.Context) error {
+	console.Run(ctx.Args().First())
+
 	if ctx.Args().Len() > 1 {
 		utils.Fatalf("invalid command-line: too many arguments")
 	}
@@ -123,13 +114,13 @@ func remoteConsole(ctx *cli.Context) error {
 	if err != nil {
 		utils.Fatalf("Unable to attach to remote geth: %v", err)
 	}
-	config := console.Config{
+	config := console_legacy.Config{
 		DataDir: utils.MakeDataDir(ctx),
 		DocRoot: ctx.String(utils.JSpathFlag.Name),
 		Client:  client,
 		Preload: utils.MakeConsolePreloads(ctx),
 	}
-	console, err := console.New(config)
+	console, err := console_legacy.New(config)
 	if err != nil {
 		utils.Fatalf("Failed to start the JavaScript console: %v", err)
 	}
@@ -143,18 +134,5 @@ func remoteConsole(ctx *cli.Context) error {
 	// Otherwise print the welcome screen and enter interactive mode
 	console.Welcome()
 	console.Interactive()
-	return nil
-}
-
-// ephemeralConsole starts a new geth node, attaches an ephemeral JavaScript
-// console to it, executes each of the files specified as arguments and tears
-// everything down.
-func ephemeralConsole(ctx *cli.Context) error {
-	var b strings.Builder
-	for _, file := range ctx.Args().Slice() {
-		b.WriteString(fmt.Sprintf("loadScript('%s');", file))
-	}
-	utils.Fatalf(`The "js" command is deprecated. Please use the following instead:
-geth --exec "%s" console`, b.String())
 	return nil
 }

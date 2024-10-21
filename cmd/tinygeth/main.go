@@ -28,7 +28,7 @@ import (
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/ethereum/go-ethereum/metrics"
 	"github.com/karalabe/tinygeth/cmd/utils"
-	"github.com/karalabe/tinygeth/console/prompt"
+	"github.com/karalabe/tinygeth/console-legacy/prompt"
 	"github.com/karalabe/tinygeth/eth/downloader"
 	"github.com/karalabe/tinygeth/internal/debug"
 	"github.com/karalabe/tinygeth/internal/flags"
@@ -215,7 +215,6 @@ func init() {
 		// See consolecmd.go:
 		consoleCommand,
 		attachCommand,
-		javascriptCommand,
 		// See misccmd.go:
 		versionCommand,
 		versionCheckCommand,
