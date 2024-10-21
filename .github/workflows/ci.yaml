@@ -5,7 +5,7 @@ on:
 
 jobs:
   # Runs the tests and creates coverage reports
-  build:
+  tests:
     strategy:
       matrix:
         os: [ ubuntu-latest, macos-latest ]
@@ -43,6 +43,7 @@ jobs:
 
   # Builds the multi-arch amd64/arm64 docker images
   docker:
+    needs: tests
     runs-on: ubuntu-latest
     steps:
       - name: Set up QEMU
