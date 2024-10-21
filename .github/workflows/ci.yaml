@@ -4,6 +4,44 @@ on:
   push:
 
 jobs:
+  # Runs the tests and creates coverage reports
+  build:
+    strategy:
+      matrix:
+        os: [ ubuntu-latest, macos-latest ]
+        go-version: [ 'stable', 'oldstable' ]
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: 'true'
+
+      - name: Set up Go ${{ matrix.go-version }}
+        uses: actions/setup-go@v5
+        with:
+          go-version: ${{ matrix.go-version }}
+
+      - name: Build
+        run: go build -v ./...
+
+      - name: Test with coverage
+        run: go test -v -coverprofile="coverage-${{ matrix.os }}-${{ matrix.go-version }}.txt" -coverpkg=./... ./...
+
+      - name: Codegen with coverage
+        env:
+          GOCOVERDIR: "${{ github.workspace }}/coverage"
+        run: |
+          mkdir coverage
+          go generate ./...
+          go tool covdata textfmt -i=coverage -o=coverage-sszgen-${{ matrix.os }}-${{ matrix.go-version }}.txt
+
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v4.5.0
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+
+  # Builds the multi-arch amd64/arm64 docker images
   docker:
     runs-on: ubuntu-latest
     steps:
