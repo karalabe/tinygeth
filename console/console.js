@@ -15,13 +15,9 @@
 // along with the go-ethereum library. If not, see <http://www.gnu.org/licenses/>.
 
 // Pull in a few packages needed for the console
-import {ipc} from "viem/node";
-
 const ethers = require('ethers');
-const viem   = require('viem');
 const repl   = require('pretty-repl');
 const util   = require('util');
-const web3   = require('web3');
 
 import chalk from 'chalk';
 
@@ -37,66 +33,30 @@ function dial(url) {
         throw Error("unknown node type to dial");
     }
 }
-const apiEthers = dial(process.argv[2]);
-
-// Connect to the requested node and inject into the repl (viem)
-function transport(url) {
-    if (url.startsWith('ws://') || url.startsWith('wss://')) {
-        return new viem.webSocket(url);
-    } else if (url.startsWith('http://') || url.startsWith('https://')) {
-        return new viem.http(url);
-    } else if (url.startsWith('ipc://')) {
-        return new ipc(url);
-    } else {
-        throw Error("unknown node type to dial");
-    }
-}
-const apiViem = viem.createPublicClient({
-    transport: transport(process.argv[2]),
-    batch: {
-        multicall: true,
-    },
-    pollingInterval: 4000,
-});
-
-const apiWeb3 = new web3.Web3(process.argv[2]);
+const api = dial(process.argv[2]);
 
 // Collect all the custom methods we want to expose
 const context = {
     ethers: ethers,
-    viem:   viem,
-    web3:   web3,
-
-    web3Ethers: apiEthers,
-    web3Viem:   apiViem,
-    web3Web3:   apiWeb3,
+    client: api,
 
     eth: {
         getBlock: async (block, txs = false) => {
-            if (typeof block === 'number') {
-                return await apiViem.getBlock({blockNumber: block, includeTransactions: txs});
-            }
-            return await apiViem.getBlock({blockHash: block, includeTransactions: txs});
+            return await api.getBlock(block, txs)
         }
     }
 };
 
 // Print some startup headers
 const welcome = async () => {
-    const client  = await apiViem.request({method: "web3_clientVersion"});
-    const block   = await apiViem.getBlock();
-    const modules = await apiViem.request({method: "rpc_modules"});
-
-    const ethersver = require('viem/package.json').version;
-    const viemver = require('viem/package.json').version;
-    //const web3ver = require('web3/package.json').version;
+    const client  = await api.send("web3_clientVersion");
+    const block   = await api.getBlock();
+    const modules = await api.send("rpc_modules");
 
     console.log(`Welcome to the Tiny Geth console!\n`);
 
     console.log(`REPL: ${chalk.green("nodejs")} ${chalk.yellow(process.version)}`);
-    console.log(`Web3: ${chalk.green("ethers")} ${chalk.yellow("v" + ethers.version)}`);
-    console.log(`Web3: ${chalk.green("  viem")} ${chalk.yellow("v" + viemver)}\n`);
-    console.log(`Web3: ${chalk.green("web3js")} ${chalk.yellow("v" + web3.version)}\n`);
+    console.log(`Web3: ${chalk.green("ethers")} ${chalk.yellow("v" + ethers.version)}\n`);
 
     console.log(`Attached: ${client}`);
     console.log(`At block: ${block.number} (${new Date(1000 * Number(block.timestamp))})`);
@@ -104,7 +64,8 @@ const welcome = async () => {
 
     console.log(chalk.grey("• The web3 library uses promises, you need to await appropriately."));
     console.log(chalk.grey("• The usual Geth API methods are exposed to the root namespace."));
-    console.log(chalk.grey("• The web3 provider can be directly accessed via the `web3`.\n"));
+    console.log(chalk.grey("• The web3 provider is exposed fully via the `ethers` field."));
+    console.log(chalk.grey("• The web3 connection is exposed via the `client` field.\n"));
 };
 
 // Start the REPL server and inject all context into it
@@ -118,8 +79,8 @@ const startup = async () => {
             if (output && typeof output.stack === 'string' && typeof output.message === 'string') {
                 return chalk.red(output.stack || output.message);
             }
-            return util.inspect(output, {colors: true, depth: null});
-        },
+            return chalk.gray(util.inspect(output, {colors: true, depth: null}));
+        }
     });
     Object.assign(server.context, context);
 };
