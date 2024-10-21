@@ -2,7 +2,7 @@
 
 # Tiny Geth
 
-[![API Reference](https://pkg.go.dev/badge/github.com/karalabe/tinygeth)](https://pkg.go.dev/github.com/karalabe/tinygeth?tab=doc) [![Build Status](https://github.com/karalabe/tinygeth/actions/workflows/ci.yaml/badge.svg)](https://github.com/karalabe/tinygeth/actions/workflows/ci.yaml) [![Code Coverage](https://codecov.io/github/karalabe/tinygeth/graph/badge.svg?token=E6GEXC2AU3)](https://codecov.io/github/karalabe/tinygeth)
+[![API Reference](https://pkg.go.dev/badge/github.com/karalabe/tinygeth)](https://pkg.go.dev/github.com/karalabe/tinygeth?tab=doc) [![Build Status](https://github.com/karalabe/tinygeth/actions/workflows/tests.yaml/badge.svg)](https://github.com/karalabe/tinygeth/actions/workflows/tests.yaml) [![Code Coverage](https://codecov.io/github/karalabe/tinygeth/graph/badge.svg?token=E6GEXC2AU3)](https://codecov.io/github/karalabe/tinygeth)
 
 Tiny Geth is Peter's personal, opinionated "fork" of go-ethereum. It's not a complete fork, rather combined bits and bobs from upstream with some local changes that were rejected upstream. I want to explore what Geth could be with hands untied, without having to care about breaking code for that one developer in Nebraska[¹](https://xkcd.com/2347/).
 
