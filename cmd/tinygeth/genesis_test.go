@@ -42,10 +42,11 @@ var customGenesisTests = []struct {
 			"parentHash" : "0x0000000000000000000000000000000000000000000000000000000000000000",
 			"timestamp"  : "0x00",
 			"config"     : {
-				"terminalTotalDifficultyPassed": true
+				"chainId"                       : 1234,
+				"terminalTotalDifficultyPassed" : true
 			}
 		}`,
-		query:  "eth.getBlock(0).nonce",
+		query:  "eth.getBlock(0).then((block) => block.nonce)",
 		result: "0x0000000000001338",
 	},
 	// Genesis file with specific chain configurations
@@ -61,13 +62,14 @@ var customGenesisTests = []struct {
 			"parentHash" : "0x0000000000000000000000000000000000000000000000000000000000000000",
 			"timestamp"  : "0x00",
 			"config"     : {
+				"chainId"                       : 1234,
 				"homesteadBlock"                : 42,
 				"daoForkBlock"                  : 141,
 				"daoForkSupport"                : true,
 				"terminalTotalDifficultyPassed" : true
 			}
 		}`,
-		query:  "eth.getBlock(0).nonce",
+		query:  "eth.getBlock(0).then((block) => block.nonce)",
 		result: "0x0000000000001339",
 	},
 }
@@ -90,8 +92,8 @@ func TestCustomGenesis(t *testing.T) {
 		// Query the custom genesis block
 		geth := runGeth(t, "--networkid", "1337", "--syncmode=full", "--cache", "16",
 			"--datadir", datadir, "--maxpeers", "0", "--port", "0", "--authrpc.port", "0",
-			"--nodiscover", "--nat", "none", "--ipcdisable",
-			"--exec", tt.query, "console")
+			"--nodiscover", "--nat", "none",
+			"--eval", tt.query, "console")
 		geth.ExpectRegexp(tt.result)
 		geth.ExpectExit()
 	}
@@ -115,7 +117,8 @@ func TestCustomBackend(t *testing.T) {
 			"parentHash" : "0x0000000000000000000000000000000000000000000000000000000000000000",
 			"timestamp"  : "0x00",
 			"config"     : {
-				"terminalTotalDifficultyPassed": true
+				"chainId"                       : 1234,
+				"terminalTotalDifficultyPassed" : true
 			}
 		}`
 	type backendTest struct {
@@ -142,8 +145,8 @@ func TestCustomBackend(t *testing.T) {
 		{ // Exec + query
 			args := append(tt.execArgs, "--networkid", "1337", "--syncmode=full", "--cache", "16",
 				"--datadir", datadir, "--maxpeers", "0", "--port", "0", "--authrpc.port", "0",
-				"--nodiscover", "--nat", "none", "--ipcdisable",
-				"--exec", "eth.getBlock(0).nonce", "console")
+				"--nodiscover", "--nat", "none",
+				"--eval", "eth.getBlock(0).then((block) => block.nonce)", "console")
 			geth := runGeth(t, args...)
 			geth.ExpectRegexp(tt.execExpect)
 			geth.ExpectExit()

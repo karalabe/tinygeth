@@ -31,6 +31,8 @@ These are the approximate changes compared upstream:
   - There is no point in maintaining the same utility functionality in multiple repositories / forks. Any Go library code that can be reused as a pre-canned chunk of code from upstream, will be done so. These include: `accounts/abi`, `common`, `crypto`, `log`, `metrics`, `p2p`, `rlp`, `rpc` at the moment.
 - Tiny Geth does not support account management.
   - Ethereum nodes should not concern themselves with being wallets. Whilst having a wallet implementation in Go is useful (please use go-ethereum as a library), having a keystore inside a running node is not.
+- Tiny Geth uses [`node.js`](https://nodejs.org/en) + [`ethers`](https://docs.ethers.org/v6/) for its console.
+  - Any JavaScript runtime other than the major ones will always trail behind the specs, usually by years. Using node.js is admittedly a big cannon, but it gets rid one a set of problems an Ethereum node should not care about; and at the same time opens up the door for the modern JavaScript package ecosystem.
 
 ## Authorship
 

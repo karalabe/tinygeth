@@ -17,9 +17,6 @@
 package main
 
 import (
-	"fmt"
-	"strings"
-
 	"github.com/karalabe/tinygeth/cmd/utils"
 	"github.com/karalabe/tinygeth/console"
 	"github.com/karalabe/tinygeth/internal/flags"
@@ -27,46 +24,41 @@ import (
 )
 
 var (
-	consoleFlags = []cli.Flag{utils.JSpathFlag, utils.ExecFlag, utils.PreloadJSFlag}
+	// Define the scripts to fine tune the console
+	consoleEvalFlag = &cli.StringFlag{
+		Name:  "eval",
+		Usage: "Evaluate a JavaScript statement after starting the console",
+	}
+	consoleScriptFlag = &cli.StringSliceFlag{
+		Name:  "scripts",
+		Usage: "Evaluate a JavaScript script(s) after starting the console",
+	}
+	consoleFlags = []cli.Flag{consoleEvalFlag, consoleScriptFlag}
 
+	// Define the commands to start the console
 	consoleCommand = &cli.Command{
 		Action: localConsole,
 		Name:   "console",
-		Usage:  "Start an interactive JavaScript environment",
+		Usage:  "Start a node with an interactive JavaScript console connected",
 		Flags:  flags.Merge(nodeFlags, rpcFlags, consoleFlags),
 		Description: `
 The Geth console is an interactive shell for the JavaScript runtime environment
-which exposes a node admin interface as well as the Ðapp JavaScript API.
-See https://geth.ethereum.org/docs/interacting-with-geth/javascript-console.`,
+which exposes an admin interface, as well as Ðapp scripting through Ethers.js.`,
 	}
-
 	attachCommand = &cli.Command{
 		Action:    remoteConsole,
 		Name:      "attach",
-		Usage:     "Start an interactive JavaScript environment (connect to node)",
+		Usage:     "Start an interactive JavaScript console connected to a remote node",
 		ArgsUsage: "[endpoint]",
 		Flags:     flags.Merge([]cli.Flag{utils.DataDirFlag, utils.HttpHeaderFlag}, consoleFlags),
 		Description: `
 The Geth console is an interactive shell for the JavaScript runtime environment
-which exposes a node admin interface as well as the Ðapp JavaScript API.
-See https://geth.ethereum.org/docs/interacting-with-geth/javascript-console.
-This command allows to open a console on a running geth node.`,
-	}
-
-	javascriptCommand = &cli.Command{
-		Action:    ephemeralConsole,
-		Name:      "js",
-		Usage:     "(DEPRECATED) Execute the specified JavaScript files",
-		ArgsUsage: "<jsfile> [jsfile...]",
-		Flags:     flags.Merge(nodeFlags, consoleFlags),
-		Description: `
-The JavaScript VM exposes a node admin interface as well as the Ðapp
-JavaScript API. See https://geth.ethereum.org/docs/interacting-with-geth/javascript-console`,
+which exposes an admin interface, as well as Ðapp scripting through Ethers.js.
+This command opens a console on a running, remote Ethereum node.`,
 	}
 )
 
-// localConsole starts a new geth node, attaching a JavaScript console to it at the
-// same time.
+// localConsole starts a new node, attaching a js console to it at the same time.
 func localConsole(ctx *cli.Context) error {
 	// Create and start the node based on the CLI flags
 	prepare(ctx)
@@ -74,87 +66,17 @@ func localConsole(ctx *cli.Context) error {
 	startNode(ctx, stack, true)
 	defer stack.Close()
 
-	// Attach to the newly started node and create the JavaScript console.
-	client := stack.Attach()
-	config := console.Config{
-		DataDir: utils.MakeDataDir(ctx),
-		DocRoot: ctx.String(utils.JSpathFlag.Name),
-		Client:  client,
-		Preload: utils.MakeConsolePreloads(ctx),
-	}
-	console, err := console.New(config)
-	if err != nil {
-		return fmt.Errorf("failed to start the JavaScript console: %v", err)
-	}
-	defer console.Stop(false)
+	// Attach to the newly started node and create the console.
+	eval := ctx.String(consoleEvalFlag.Name)
+	incl := ctx.StringSlice(consoleScriptFlag.Name)
 
-	// If only a short execution was requested, evaluate and return.
-	if script := ctx.String(utils.ExecFlag.Name); script != "" {
-		console.Evaluate(script)
-		return nil
-	}
-
-	// Track node shutdown and stop the console when it goes down.
-	// This happens when SIGTERM is sent to the process.
-	go func() {
-		stack.Wait()
-		console.StopInteractive()
-	}()
-
-	// Print the welcome screen and enter interactive mode.
-	console.Welcome()
-	console.Interactive()
-	return nil
+	return console.RunInProc(stack.IPCEndpoint(), eval, incl)
 }
 
-// remoteConsole will connect to a remote geth instance, attaching a JavaScript
-// console to it.
+// remoteConsole will connect to a remote node, attaching a js console to it.
 func remoteConsole(ctx *cli.Context) error {
-	if ctx.Args().Len() > 1 {
-		utils.Fatalf("invalid command-line: too many arguments")
-	}
-	endpoint := ctx.Args().First()
-	if endpoint == "" {
-		cfg := defaultNodeConfig()
-		utils.SetDataDir(ctx, &cfg)
-		endpoint = cfg.IPCEndpoint()
-	}
-	client, err := utils.DialRPCWithHeaders(endpoint, ctx.StringSlice(utils.HttpHeaderFlag.Name))
-	if err != nil {
-		utils.Fatalf("Unable to attach to remote geth: %v", err)
-	}
-	config := console.Config{
-		DataDir: utils.MakeDataDir(ctx),
-		DocRoot: ctx.String(utils.JSpathFlag.Name),
-		Client:  client,
-		Preload: utils.MakeConsolePreloads(ctx),
-	}
-	console, err := console.New(config)
-	if err != nil {
-		utils.Fatalf("Failed to start the JavaScript console: %v", err)
-	}
-	defer console.Stop(false)
+	eval := ctx.String(consoleEvalFlag.Name)
+	incl := ctx.StringSlice(consoleScriptFlag.Name)
 
-	if script := ctx.String(utils.ExecFlag.Name); script != "" {
-		console.Evaluate(script)
-		return nil
-	}
-
-	// Otherwise print the welcome screen and enter interactive mode
-	console.Welcome()
-	console.Interactive()
-	return nil
-}
-
-// ephemeralConsole starts a new geth node, attaches an ephemeral JavaScript
-// console to it, executes each of the files specified as arguments and tears
-// everything down.
-func ephemeralConsole(ctx *cli.Context) error {
-	var b strings.Builder
-	for _, file := range ctx.Args().Slice() {
-		b.WriteString(fmt.Sprintf("loadScript('%s');", file))
-	}
-	utils.Fatalf(`The "js" command is deprecated. Please use the following instead:
-geth --exec "%s" console`, b.String())
-	return nil
+	return console.RunAsProc(ctx.Args().First(), eval, incl)
 }
