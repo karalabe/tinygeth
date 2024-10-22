@@ -22,38 +22,67 @@ import (
 	"os/exec"
 	"path/filepath"
 	"syscall"
+
+	"github.com/karalabe/tinygeth/console/jsrepl"
+	"github.com/karalabe/tinygeth/params"
 )
 
-//go:generate yarn install
-//go:generate npx esbuild console.js --bundle --platform=node --minify --keep-names --outfile=bundle.js
+// RunAsProc starts up the console and completely switches over the process to
+// it, exiting when the console goes down.
+func RunAsProc(url string) error {
+	// Configure the console, cleaning up after
+	nodejs, bundle, envs, err := configure()
+	if err != nil {
+		return err
+	}
+	defer os.Remove(bundle)
 
-// Bundle is the compiled together NodeJS module containing Ethers.js, a pretty
-// printed JavaScript REPL interpreter and some Geth bridge code.
-//
-//go:embed bundle.js
-var bundle string
+	// Execute the console, taking over the process space
+	return syscall.Exec(nodejs, []string{nodejs, bundle, url}, append(envs, syscall.Environ()...))
+}
 
-func Run(url string) error {
+// RunInProc starts up the console inside the current process, multiplexing the
+// standard outputs and consuming the standard input.
+func RunInProc(url string) error {
+	// Configure the console, cleaning up after
+	nodejs, bundle, envs, err := configure()
+	if err != nil {
+		return err
+	}
+	// Execute the console, keeping it in the current process space
+	repl := exec.Command(nodejs, bundle, url)
+	repl.Env = append(envs, os.Environ()...)
+	repl.Stdin = os.Stdin
+	repl.Stdout = os.Stdout
+	repl.Stderr = os.Stderr
+	return repl.Run()
+}
+
+// configure attempts to configure a nodejs based console with a JavaScript REPL
+// bundle exported to disk, with some env vars specified.
+func configure() (node string, bundle string, envs []string, err error) {
 	// Find the NodeJS executable
 	path, err := exec.LookPath("node")
 	if err != nil {
-		return err
+		return "", "", nil, err
 	}
 	path, _ = filepath.Abs(path)
 
-	// Dump out the console bundle to disk and remove it after
-	repl, err := os.CreateTemp("", "")
+	// Assemble the js repl bundle script
+	repl, err := os.CreateTemp("", "tinygeth-console-")
 	if err != nil {
-		return err
+		return "", "", nil, err
 	}
-	defer os.Remove(repl.Name())
-
-	if _, err = repl.Write([]byte(bundle)); err != nil {
-		return err
+	if _, err = repl.WriteString(jsrepl.Bundle); err != nil {
+		return "", "", nil, err
 	}
 	if err = repl.Close(); err != nil {
-		return err
+		return "", "", nil, err
 	}
-	// Start the NodeJS REPL with the console loaded
-	return syscall.Exec(path, []string{path, repl.Name(), url}, syscall.Environ())
+	// Inject our specific APIs and ENV variables
+	envs = []string{
+		"TINYGETH_CONSOLE_VERSION=" + params.VersionWithMeta,
+	}
+	// Return everything for different startups
+	return path, repl.Name(), envs, nil
 }

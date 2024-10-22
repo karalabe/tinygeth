@@ -17,11 +17,8 @@
 package main
 
 import (
-	"fmt"
-
 	"github.com/karalabe/tinygeth/cmd/utils"
 	"github.com/karalabe/tinygeth/console"
-	console_legacy "github.com/karalabe/tinygeth/console-legacy"
 	"github.com/karalabe/tinygeth/internal/flags"
 	"github.com/urfave/cli/v2"
 )
@@ -64,75 +61,11 @@ func localConsole(ctx *cli.Context) error {
 	defer stack.Close()
 
 	// Attach to the newly started node and create the JavaScript console.
-	client := stack.Attach()
-	config := console_legacy.Config{
-		DataDir: utils.MakeDataDir(ctx),
-		DocRoot: ctx.String(utils.JSpathFlag.Name),
-		Client:  client,
-		Preload: utils.MakeConsolePreloads(ctx),
-	}
-	console, err := console_legacy.New(config)
-	if err != nil {
-		return fmt.Errorf("failed to start the JavaScript console: %v", err)
-	}
-	defer console.Stop(false)
-
-	// If only a short execution was requested, evaluate and return.
-	if script := ctx.String(utils.ExecFlag.Name); script != "" {
-		console.Evaluate(script)
-		return nil
-	}
-
-	// Track node shutdown and stop the console when it goes down.
-	// This happens when SIGTERM is sent to the process.
-	go func() {
-		stack.Wait()
-		console.StopInteractive()
-	}()
-
-	// Print the welcome screen and enter interactive mode.
-	console.Welcome()
-	console.Interactive()
-	return nil
+	return console.RunInProc(stack.IPCEndpoint())
 }
 
 // remoteConsole will connect to a remote geth instance, attaching a JavaScript
 // console to it.
 func remoteConsole(ctx *cli.Context) error {
-	console.Run(ctx.Args().First())
-
-	if ctx.Args().Len() > 1 {
-		utils.Fatalf("invalid command-line: too many arguments")
-	}
-	endpoint := ctx.Args().First()
-	if endpoint == "" {
-		cfg := defaultNodeConfig()
-		utils.SetDataDir(ctx, &cfg)
-		endpoint = cfg.IPCEndpoint()
-	}
-	client, err := utils.DialRPCWithHeaders(endpoint, ctx.StringSlice(utils.HttpHeaderFlag.Name))
-	if err != nil {
-		utils.Fatalf("Unable to attach to remote geth: %v", err)
-	}
-	config := console_legacy.Config{
-		DataDir: utils.MakeDataDir(ctx),
-		DocRoot: ctx.String(utils.JSpathFlag.Name),
-		Client:  client,
-		Preload: utils.MakeConsolePreloads(ctx),
-	}
-	console, err := console_legacy.New(config)
-	if err != nil {
-		utils.Fatalf("Failed to start the JavaScript console: %v", err)
-	}
-	defer console.Stop(false)
-
-	if script := ctx.String(utils.ExecFlag.Name); script != "" {
-		console.Evaluate(script)
-		return nil
-	}
-
-	// Otherwise print the welcome screen and enter interactive mode
-	console.Welcome()
-	console.Interactive()
-	return nil
+	return console.RunAsProc(ctx.Args().First())
 }
