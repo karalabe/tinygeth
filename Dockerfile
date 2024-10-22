@@ -19,7 +19,7 @@ RUN cd /tinygeth && go run build/ci.go install -static ./cmd/tinygeth
 # Pull Geth into a second stage deploy alpine container
 FROM alpine:latest
 
-RUN apk add --no-cache ca-certificates node
+RUN apk add --no-cache ca-certificates nodejs
 COPY --from=builder /tinygeth/build/bin/tinygeth /usr/local/bin/
 
 EXPOSE 8545 8546 30303 30303/udp
