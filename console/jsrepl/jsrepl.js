@@ -86,8 +86,10 @@ const welcome = async () => {
     console.log(chalk.grey("• The `hooked` client exposes all data from the RPC.\n"));
 };
 
-// Start the REPL server and inject all context into it
+// Startup starts the REPL server and injects all context into it
 const startup = async () => {
+    await welcome();
+
     const server = repl.start({
         ignoreUndefined: true,
         useGlobal: true,
@@ -105,10 +107,28 @@ const startup = async () => {
     });
     Object.assign(server.context, context);
 };
-
-welcome().then(() => startup());
+const evaluate = async() => {
+    Object.assign(global, context);
+};
+module.exports = { startup, evaluate }; // Need to avoid minification losing the name
 
 // REPL started and entire script evaluated, self-destruct. This is a weird one
 // but since we can't delete from Go (process reown), this is the only remaining
 // place to clean up the script.
 fs.unlinkSync(process.argv[1]);
+
+// This will be injected by Geth along with any other user scripts if executing
+// in interactive REPL mode:
+//
+// module.exports.startup().then(async () => {
+//   [...]
+// });
+//
+//
+// This will be injected by Geth along with any other user scripts if executing
+// in non-interactive single-shot eval mode:
+//
+// module.exports.evaluate().then(async () => {
+//     console.log([...]);
+//     process.exit();
+// });

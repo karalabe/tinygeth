@@ -29,9 +29,9 @@ import (
 
 // RunAsProc starts up the console and completely switches over the process to
 // it, exiting when the console goes down.
-func RunAsProc(url string) error {
+func RunAsProc(url string, eval string, scripts []string) error {
 	// Configure the console, cleaning up after
-	nodejs, bundle, envs, err := configure()
+	nodejs, bundle, envs, err := configure(eval, scripts)
 	if err != nil {
 		return err
 	}
@@ -43,9 +43,9 @@ func RunAsProc(url string) error {
 
 // RunInProc starts up the console inside the current process, multiplexing the
 // standard outputs and consuming the standard input.
-func RunInProc(url string) error {
+func RunInProc(url string, eval string, scripts []string) error {
 	// Configure the console, cleaning up after
-	nodejs, bundle, envs, err := configure()
+	nodejs, bundle, envs, err := configure(eval, scripts)
 	if err != nil {
 		return err
 	}
@@ -60,7 +60,7 @@ func RunInProc(url string) error {
 
 // configure attempts to configure a nodejs based console with a JavaScript REPL
 // bundle exported to disk, with some env vars specified.
-func configure() (node string, bundle string, envs []string, err error) {
+func configure(eval string, scripts []string) (node string, bundle string, envs []string, err error) {
 	// Find the NodeJS executable
 	path, err := exec.LookPath("node")
 	if err != nil {
@@ -73,11 +73,39 @@ func configure() (node string, bundle string, envs []string, err error) {
 	if err != nil {
 		return "", "", nil, err
 	}
-	if _, err = repl.WriteString(jsrepl.Bundle); err != nil {
+	defer repl.Close()
+
+	if _, err = repl.WriteString(jsrepl.Bundle + "\n"); err != nil {
 		return "", "", nil, err
 	}
-	if err = repl.Close(); err != nil {
-		return "", "", nil, err
+	if eval == "" {
+		// Running in interactive REPL mode
+		if _, err = repl.WriteString("module.exports.startup().then(async () => {\n"); err != nil {
+			return "", "", nil, err
+		}
+		for _, script := range scripts {
+			blob, err := os.ReadFile(script)
+			if err != nil {
+				return "", "", nil, err
+			}
+			if _, err = repl.WriteString(string(blob) + "\n"); err != nil {
+				return "", "", nil, err
+			}
+		}
+		if _, err = repl.WriteString("});"); err != nil {
+			return "", "", nil, err
+		}
+	} else {
+		// Running in single-shot evaluation mode
+		if _, err = repl.WriteString("module.exports.evaluate().then(async () => {\n"); err != nil {
+			return "", "", nil, err
+		}
+		if _, err = repl.WriteString("console.log(await " + eval + "); process.exit();\n"); err != nil {
+			return "", "", nil, err
+		}
+		if _, err = repl.WriteString("});"); err != nil {
+			return "", "", nil, err
+		}
 	}
 	// Inject our specific APIs and ENV variables
 	envs = []string{

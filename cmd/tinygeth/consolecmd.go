@@ -24,35 +24,41 @@ import (
 )
 
 var (
-	consoleFlags = []cli.Flag{utils.JSpathFlag, utils.ExecFlag, utils.PreloadJSFlag}
+	// Define the scripts to fine tune the console
+	consoleEvalFlag = &cli.StringFlag{
+		Name:  "eval",
+		Usage: "Evaluate a JavaScript statement after starting the console",
+	}
+	consoleScriptFlag = &cli.StringSliceFlag{
+		Name:  "scripts",
+		Usage: "Evaluate a JavaScript script(s) after starting the console",
+	}
+	consoleFlags = []cli.Flag{consoleEvalFlag, consoleScriptFlag}
 
+	// Define the commands to start the console
 	consoleCommand = &cli.Command{
 		Action: localConsole,
 		Name:   "console",
-		Usage:  "Start an interactive JavaScript environment",
+		Usage:  "Start a node with an interactive JavaScript console connected",
 		Flags:  flags.Merge(nodeFlags, rpcFlags, consoleFlags),
 		Description: `
 The Geth console is an interactive shell for the JavaScript runtime environment
-which exposes a node admin interface as well as the Ðapp JavaScript API.
-See https://geth.ethereum.org/docs/interacting-with-geth/javascript-console.`,
+which exposes an admin interface, as well as Ðapp scripting through Ethers.js.`,
 	}
-
 	attachCommand = &cli.Command{
 		Action:    remoteConsole,
 		Name:      "attach",
-		Usage:     "Start an interactive JavaScript environment (connect to node)",
+		Usage:     "Start an interactive JavaScript console connected to a remote node",
 		ArgsUsage: "[endpoint]",
 		Flags:     flags.Merge([]cli.Flag{utils.DataDirFlag, utils.HttpHeaderFlag}, consoleFlags),
 		Description: `
 The Geth console is an interactive shell for the JavaScript runtime environment
-which exposes a node admin interface as well as the Ðapp JavaScript API.
-See https://geth.ethereum.org/docs/interacting-with-geth/javascript-console.
-This command allows to open a console on a running geth node.`,
+which exposes an admin interface, as well as Ðapp scripting through Ethers.js.
+This command opens a console on a running, remote Ethereum node.`,
 	}
 )
 
-// localConsole starts a new geth node, attaching a JavaScript console to it at the
-// same time.
+// localConsole starts a new node, attaching a js console to it at the same time.
 func localConsole(ctx *cli.Context) error {
 	// Create and start the node based on the CLI flags
 	prepare(ctx)
@@ -60,12 +66,17 @@ func localConsole(ctx *cli.Context) error {
 	startNode(ctx, stack, true)
 	defer stack.Close()
 
-	// Attach to the newly started node and create the JavaScript console.
-	return console.RunInProc(stack.IPCEndpoint())
+	// Attach to the newly started node and create the console.
+	eval := ctx.String(consoleEvalFlag.Name)
+	incl := ctx.StringSlice(consoleScriptFlag.Name)
+
+	return console.RunInProc(stack.IPCEndpoint(), eval, incl)
 }
 
-// remoteConsole will connect to a remote geth instance, attaching a JavaScript
-// console to it.
+// remoteConsole will connect to a remote node, attaching a js console to it.
 func remoteConsole(ctx *cli.Context) error {
-	return console.RunAsProc(ctx.Args().First())
+	eval := ctx.String(consoleEvalFlag.Name)
+	incl := ctx.StringSlice(consoleScriptFlag.Name)
+
+	return console.RunAsProc(ctx.Args().First(), eval, incl)
 }

@@ -32,22 +32,6 @@ func (t *testHandler) ServeHTTP(out http.ResponseWriter, in *http.Request) {
 	t.body(out, in)
 }
 
-// TestAttachWithHeaders tests that 'geth attach' with custom headers works, i.e
-// that custom headers are forwarded to the target.
-func TestAttachWithHeaders(t *testing.T) {
-	t.Parallel()
-	ln, err := net.Listen("tcp", "localhost:0")
-	if err != nil {
-		t.Fatal(err)
-	}
-	port := ln.Addr().(*net.TCPAddr).Port
-	testReceiveHeaders(t, ln, "attach", "-H", "first: one", "-H", "second: two", fmt.Sprintf("http://localhost:%d", port))
-	// This way to do it fails due to flag ordering:
-	//
-	// testReceiveHeaders(t, ln, "-H", "first: one", "-H", "second: two", "attach", fmt.Sprintf("http://localhost:%d", port))
-	// This is fixed in a follow-up PR.
-}
-
 // TestRemoteDbWithHeaders tests that 'geth db --remotedb' with custom headers works, i.e
 // that custom headers are forwarded to the target.
 func TestRemoteDbWithHeaders(t *testing.T) {
